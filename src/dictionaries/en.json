@@ -1,5 +1,6 @@
 {
-  "meta": {
-    "home": "Hossein Rezaei | Front-End Developer"
-  }
+  "title": "Hossein Rezaei | Front-End Developer",
+  "firstParagraph": "This is home page",
+  "about": "This is about page",
+  "name": "Hossein"
 }
