@@ -3,6 +3,7 @@ import { createContext, useReducer } from "react";
 
 const initialState = {
   isDark: false,
+  sideBar: false,
 };
 
 export const LayoutContext = createContext();
@@ -13,6 +14,8 @@ const reducer = (state, action) => {
   switch (type) {
     case "toggleDarkMode":
       return { ...state, isDark: !state.isDark };
+    case "toggleSideBar":
+      return { ...state, sideBar: !state.sideBar };
     case "reset":
       return initialState;
     case "allStates":
@@ -24,6 +27,7 @@ const reducer = (state, action) => {
 
 function LayoutContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <LayoutContext.Provider value={{ state, dispatch }}>
       {children}

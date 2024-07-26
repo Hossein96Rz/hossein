@@ -1,17 +1,22 @@
 "use client";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
 
 const DarkModeProvider = ({ children }) => {
-  const { dispatch } = useContext(LayoutContext);
+  const { state, dispatch } = useContext(LayoutContext);
 
-  useEffect(() => {
-    const darkModePreference = localStorage.getItem("dark-mode") === "true";
-    dispatch({ type: "isDark", payload: darkModePreference });
-    if (darkModePreference) {
+  useLayoutEffect(() => {
+    if (state.isDark) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
+    }
+  }, [state.isDark]);
+
+  useEffect(() => {
+    const darkModePreference = localStorage.getItem("dark-mode") === "true";
+    if (darkModePreference) {
+      dispatch({ type: "isDark", payload: darkModePreference });
     }
   }, []);
 
