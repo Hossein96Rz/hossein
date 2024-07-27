@@ -4,6 +4,7 @@ import { createContext, useReducer } from "react";
 const initialState = {
   isDark: false,
   sideBar: false,
+  language: "",
 };
 
 export const LayoutContext = createContext();
@@ -21,7 +22,7 @@ const reducer = (state, action) => {
     case "allStates":
       return { ...state, ...payload };
     default:
-      return { ...state, [type]: [payload] };
+      return { ...state, [type]: payload };
   }
 };
 

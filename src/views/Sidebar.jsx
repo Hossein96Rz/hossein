@@ -17,13 +17,13 @@ function Sidebar({ dictionary }) {
   const { sideBar } = state;
 
   const menuItems = [
-    { title: dictionary.home, icon: home },
-    { title: dictionary.about, icon: about },
-    { title: dictionary.service, icon: service },
-    { title: dictionary.portfolio, icon: portfolio },
-    { title: dictionary.testimonial, icon: testimonial },
-    { title: dictionary.blog, icon: blog },
-    { title: dictionary.contact, icon: contact },
+    { title: dictionary.home, icon: home, route: "/" },
+    { title: dictionary.about, icon: about, route: "/about" },
+    { title: dictionary.service, icon: service, route: "/service" },
+    { title: dictionary.portfolio, icon: portfolio, route: "/portfolio" },
+    { title: dictionary.testimonial, icon: testimonial, route: "/testimonial" },
+    { title: dictionary.blog, icon: blog, route: "/blog" },
+    { title: dictionary.contact, icon: contact, route: "/contact" },
   ];
 
   return (
@@ -36,11 +36,16 @@ function Sidebar({ dictionary }) {
       <div className="flex h-[81px] items-center border-b-[1px] border-b-black p-4 text-xl font-bold text-slate-800 dark:border-b-[#999] dark:text-white">
         {dictionary.name}
       </div>
-      <div className="px-5 pb-5 pt-9">
+      <ul className="px-5 pb-5 pt-9">
         {menuItems.map((item) => (
-          <SideBarRow key={item.title} icon={item.icon} title={item.title} />
+          <SideBarRow
+            key={item.title}
+            icon={item.icon}
+            title={item.title}
+            route={item.route}
+          />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
