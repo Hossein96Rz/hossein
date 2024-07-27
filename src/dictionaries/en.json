@@ -1,6 +1,13 @@
 {
   "title": "Hossein Rezaei | Front-End Developer",
+  "description": "Welcome to the portfolio of Hossein Rezaei, a skilled frontend developer with experience in React and NextJs. Explore my projects, learn about my skills, and get in touch for collaboration opportunities.",
   "firstParagraph": "This is home page",
-  "about": "This is about page",
-  "name": "Hossein"
+  "name": "Hossein",
+  "home": "Home",
+  "about": "About",
+  "service": "Service",
+  "portfolio": "Portfolio",
+  "testimonial": "Testimonial",
+  "blog": "Blog",
+  "contact": "Contact"
 }
