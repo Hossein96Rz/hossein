@@ -5,8 +5,9 @@ import { LayoutContext } from "../contexts/layoutContext";
 import moon from "public/icons/moon.svg";
 import sun from "public/icons/sun.svg";
 import Image from "next/image";
+import cx from "classnames";
 
-function ToggleDarkMode() {
+function ToggleDarkMode({ className }) {
   const { state, dispatch } = useContext(LayoutContext);
   function toggleDarkMode() {
     dispatch({ type: "toggleDarkMode" });
@@ -17,7 +18,12 @@ function ToggleDarkMode() {
     );
   }
   return (
-    <label className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-gray-200 dark:bg-slate-500">
+    <label
+      className={cx(
+        "flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-gray-200 dark:bg-slate-500",
+        className,
+      )}
+    >
       <input
         type="checkbox"
         value={!state.isDark}

@@ -3,7 +3,7 @@ import ToggleSideBar from "../components/ToggleSideBar";
 
 function Header({ dictionary }) {
   return (
-    <header className="flex h-20 items-center justify-between bg-white p-4 shadow-xl transition-all ease-linear dark:bg-[#34495e] dark:shadow-white">
+    <header className="fixed z-10 flex h-20 w-full items-center justify-between bg-white p-4 shadow-md transition-all ease-linear xl:hidden dark:bg-[#34495e] dark:shadow-gray-800">
       <p className="text-3xl font-black text-slate-800 dark:text-white">
         <span className="text-[#34495C] underline dark:text-[#557BA7]">
           {dictionary.name[0]}

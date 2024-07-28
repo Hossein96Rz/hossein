@@ -16,12 +16,12 @@ async function layout({ children, params }) {
   const { lang } = params;
   const dic = await getDictionary(lang);
   return (
-    <>
+    <div className="h-dvh xl:flex">
       <LangProvider lang={lang} />
       <Header dictionary={dic} />
       <Sidebar dictionary={dic} />
       {children}
-    </>
+    </div>
   );
 }
 
