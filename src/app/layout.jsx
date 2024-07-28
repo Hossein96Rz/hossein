@@ -1,14 +1,17 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import LayoutContextProvider from "../contexts/layoutContext";
 import DarkModeProvider from "../components/DarkModeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export default async function RootLayout({ children }) {
   return (
     <html>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <LayoutContextProvider>
           <DarkModeProvider>{children}</DarkModeProvider>
         </LayoutContextProvider>

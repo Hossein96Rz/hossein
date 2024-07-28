@@ -9,11 +9,15 @@ function getLocale(request) {
 
 export function middleware(request) {
   // Check if there is any supported locale in the pathname
+
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
+  if (pathname === "/favicon.ico") {
+    return;
+  }
   if (pathnameHasLocale) return;
 
   // Redirect if there is no locale

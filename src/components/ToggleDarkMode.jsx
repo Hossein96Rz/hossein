@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
-import moon from "@/src/public/icons/moon.svg";
-import sun from "@/src/public/icons/sun.svg";
+import moon from "public/icons/moon.svg";
+import sun from "public/icons/sun.svg";
 import Image from "next/image";
 
 function ToggleDarkMode() {

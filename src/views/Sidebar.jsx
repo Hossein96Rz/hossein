@@ -4,14 +4,15 @@ import { useContext, useEffect, useRef } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
 import classNames from "classnames";
 import SideBarRow from "../components/SideBarRow";
-import home from "@/src/public/icons/home.svg";
-import about from "@/src/public/icons/about.svg";
-import service from "@/src/public/icons/services.svg";
-import portfolio from "@/src/public/icons/portfolio.svg";
-import testimonial from "@/src/public/icons/testimonial.svg";
-import contact from "@/src/public/icons/contact.svg";
-import blog from "@/src/public/icons/blog.svg";
-
+import home from "public/icons/home.svg";
+import about from "public/icons/about.svg";
+import service from "public/icons/services.svg";
+import portfolio from "public/icons/portfolio.svg";
+import testimonial from "public/icons/testimonial.svg";
+import contact from "public/icons/contact.svg";
+import blog from "public/icons/blog.svg";
+import Image from "next/image";
+import avatar from "public/avatar/avatar.jpg";
 function Sidebar({ dictionary }) {
   const { state, dispatch } = useContext(LayoutContext);
   const { sideBar } = state;
@@ -29,13 +30,19 @@ function Sidebar({ dictionary }) {
   return (
     <div
       className={classNames(
-        "absolute top-0 z-10 h-full w-[320px] bg-white shadow-lg transition-all duration-700 ease-out dark:bg-black",
+        "absolute top-0 z-10 flex h-full w-[240px] flex-col bg-white shadow-lg transition-all duration-700 ease-out sm:w-[280px] lg:w-[320px] dark:bg-black",
         { "-translate-x-full": !sideBar },
       )}
     >
-      <div className="flex h-[81px] items-center border-b-[1px] border-b-black p-4 text-xl font-bold text-slate-800 dark:border-b-[#999] dark:text-white">
+      {/* <div className="flex h-[81px] items-center border-b-[1px] border-b-black p-4 text-xl font-bold text-slate-800 dark:border-b-[#999] dark:text-white">
         {dictionary.name}
-      </div>
+      </div> */}
+      <p className="flex h-[81px] items-center border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 dark:border-b-[#999] dark:text-white">
+        <span className="text-[#34495C] underline dark:text-[#557BA7]">
+          {dictionary.name[0]}
+        </span>
+        {dictionary.name.slice(1)}
+      </p>
       <ul className="px-5 pb-5 pt-9">
         {menuItems.map((item) => (
           <SideBarRow
@@ -46,6 +53,26 @@ function Sidebar({ dictionary }) {
           />
         ))}
       </ul>
+      <div className="mt-auto flex h-[90px] gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 dark:border-[#34495e]">
+        <div className="h-[50px] w-[50px]">
+          <Image
+            quality={20}
+            alt="profile-photo"
+            width={50}
+            height={50}
+            src={avatar}
+            className="rounded-full border border-gray-400 dark:border-[#34495e]"
+          />
+        </div>
+        <div>
+          <span className="font-medium text-[#1A1A1A] dark:text-white">
+            {dictionary.name}
+          </span>
+          <address className="text-xs not-italic text-[#7E7E7E]">
+            <a href="mailto:webmaster@example.com">hossein96rz@gmail.com</a>
+          </address>
+        </div>
+      </div>
     </div>
   );
 }
