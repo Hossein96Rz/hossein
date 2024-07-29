@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import LayoutContextProvider from "../contexts/layoutContext";
 import DarkModeProvider from "../components/DarkModeProvider";
+import "aos/dist/aos.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,4 +19,4 @@ export default async function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+}   
