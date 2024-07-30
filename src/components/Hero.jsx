@@ -3,32 +3,20 @@ import AOS from "aos";
 import Image from "next/image";
 import { useEffect } from "react";
 import hero from "public/content/hero.webp";
-import mask from "public/content/mask-image.svg";
 import { ReactTyped } from "react-typed";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";
-import Link from "next/link";
 import classNames from "classnames";
 function Hero({ dictionary }) {
-  const contactList = [
-    {
-      icon: linkedinIcon,
-      url: "https://www.linkedin.com/in/hossein-rezaei-596049233?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwDwFetY0SDWTqaId2MhjFQ%3D%3D",
-    },
-    {
-      icon: instagramIcon,
-      url: "https://www.instagram.com/hosseinrz96/",
-    },
-  ];
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
+      once: true,
     });
   }, []);
   return (
-    <div className="flex h-dvh items-center justify-center">
-      <div className="px-24 py-5 text-center">
+    <div className="flex min-h-dvh items-center justify-center text-center">
+      <div className="px-5 py-24 text-center">
         <div
           data-aos="fade-up"
           data-aos-delay="100"
@@ -45,14 +33,14 @@ function Hero({ dictionary }) {
         <p
           data-aos="fade-up"
           data-aos-delay="200"
-          className="mt-4 text-xl font-medium text-[#666666]"
+          className="mt-4 text-xl font-medium text-[#666666] dark:text-white"
         >
           {dictionary.heroMainText}
         </p>
         <div
           data-aos="fade-up"
           data-aos-delay="300"
-          className="mt-5 text-5xl font-bold text-[#1A1A1A]"
+          className="mt-5 text-5xl font-bold text-[#1A1A1A] dark:text-white"
         >
           <ReactTyped
             strings={[dictionary.frontendDevelopr]}
@@ -61,9 +49,11 @@ function Hero({ dictionary }) {
           />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
-          <p className="max-w-lg text-lg font-light text-[#7E7E7E]">
-            I&apos;m a passionate Frontend web Developer (ReactJs - NextJs) with
-            experience in web development and using cutting edge technologies.
+          <p
+            dir="rtl"
+            className="mx-auto max-w-lg text-center text-lg font-light text-[#7E7E7E] dark:text-[#a9afc3]"
+          >
+            {dictionary.description}
           </p>
         </div>
 
@@ -101,6 +91,11 @@ function Hero({ dictionary }) {
             );
           })}
         </ul>
+        <div data-aos="fade-up" data-aos-delay="600">
+          <button className="mt-6 rounded-full border-2 border-[#7e7e7e] px-9 py-2 text-lg font-medium text-[#1a1a1a] transition-all duration-200 ease-linear hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:border-[#a9afc3] dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black">
+            {dictionary.downloadCv}
+          </button>
+        </div>
         {/* <div data-aos="fade-up" data-aos-delay="300" className="h-full">
           c
         </div>
@@ -116,3 +111,14 @@ function Hero({ dictionary }) {
 }
 
 export default Hero;
+
+const contactList = [
+  {
+    icon: linkedinIcon,
+    url: "https://www.linkedin.com/in/hossein-rezaei-596049233?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BwDwFetY0SDWTqaId2MhjFQ%3D%3D",
+  },
+  {
+    icon: instagramIcon,
+    url: "https://www.instagram.com/hosseinrz96/",
+  },
+];
