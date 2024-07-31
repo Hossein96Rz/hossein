@@ -1,30 +1,31 @@
+import Negotiator from "negotiator";
 import { NextResponse } from "next/server";
-
+import { match as matchLocale } from "@formatjs/intl-localematcher";
 let locales = ["en", "fa"];
 
 function getLocale(request) {
-  const { nextUrl } = request;
-  return nextUrl.locale || "en";
+  const negotiator = new Negotiator({
+    headers: { "accept-language": request.headers.get("accept-language") },
+  });
+  const languages = negotiator.languages();
+  const locale = matchLocale(languages, locales, "en");
+  return locale;
 }
 
 export function middleware(request) {
-  // Check if there is any supported locale in the pathname
-
   const { pathname } = request.nextUrl;
+  if (pathname === "/favicon.ico") {
+    return;
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathname === "/favicon.ico") {
-    return;
-  }
   if (pathnameHasLocale) return;
 
-  // Redirect if there is no locale
   const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`;
-  // e.g. incoming request is /products
-  // The new URL is now /en-US/products
   return NextResponse.redirect(request.nextUrl);
 }
 

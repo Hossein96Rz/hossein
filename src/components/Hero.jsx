@@ -15,19 +15,19 @@ function Hero({ dictionary }) {
     });
   }, []);
   return (
-    <div className="flex min-h-dvh items-center justify-center text-center">
-      <div className="px-5 py-24 text-center">
+    <section className="flex min-h-dvh items-center justify-center text-center">
+      <div className="px-5 pt-24 text-center">
         <div
           data-aos="fade-up"
           data-aos-delay="100"
-          className="flex h-full items-center justify-center"
+          className="mx-auto flex h-52 w-52 items-center justify-center md:h-64 md:w-64"
         >
           <Image
             src={hero}
             alt="hero image"
-            width={245}
-            height={245}
-            className="rounded-full"
+            width={"auto"}
+            height={"auto"}
+            className="mx-auto rounded-full"
           />
         </div>
         <p
@@ -40,7 +40,7 @@ function Hero({ dictionary }) {
         <div
           data-aos="fade-up"
           data-aos-delay="300"
-          className="mt-5 text-5xl font-bold text-[#1A1A1A] dark:text-white"
+          className="mt-5 text-3xl font-bold text-[#1A1A1A] sm:text-5xl dark:text-white"
         >
           <ReactTyped
             strings={[dictionary.frontendDevelopr]}
@@ -49,10 +49,7 @@ function Hero({ dictionary }) {
           />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
-          <p
-            dir="rtl"
-            className="mx-auto max-w-lg text-center text-lg font-light text-[#7E7E7E] dark:text-[#a9afc3]"
-          >
+          <p className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">
             {dictionary.description}
           </p>
         </div>
@@ -69,7 +66,8 @@ function Hero({ dictionary }) {
                 className={classNames(
                   "relative mt-8 flex w-14 items-center justify-center border-[#e5e7eb] transition-all dark:border-slate-700 hover:[&>a]:-translate-y-[2px] hover:[&>a]:scale-110",
                   {
-                    "border-r-[1px]": index < contactList.length - 1,
+                    "ltr:border-r-[1px] rtl:border-l-[1px]":
+                      index < contactList.length - 1,
                   },
                 )}
               >
@@ -91,22 +89,13 @@ function Hero({ dictionary }) {
             );
           })}
         </ul>
-        <div data-aos="fade-up" data-aos-delay="600">
+        <div data-aos="fade-up" data-aos-offset="-30" data-aos-delay="600">
           <button className="mt-6 rounded-full border-2 border-[#7e7e7e] px-9 py-2 text-lg font-medium text-[#1a1a1a] transition-all duration-200 ease-linear hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:border-[#a9afc3] dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black">
             {dictionary.downloadCv}
           </button>
         </div>
-        {/* <div data-aos="fade-up" data-aos-delay="300" className="h-full">
-          c
-        </div>
-        <div data-aos="fade-up" data-aos-delay="500" className="h-full">
-          c
-        </div>
-        <div data-aos="fade-up" data-aos-delay="600" className="h-full">
-          c
-        </div> */}
       </div>
-    </div>
+    </section>
   );
 }
 
