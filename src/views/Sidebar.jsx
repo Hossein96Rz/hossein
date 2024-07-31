@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
 import classNames from "classnames";
 import SideBarRow from "../components/SideBarRow";
@@ -15,18 +15,44 @@ import Image from "next/image";
 import avatar from "public/avatar/avatar.jpg";
 import ToggleDarkMode from "../components/ToggleDarkMode";
 function Sidebar({ dictionary }) {
-  const { state, dispatch } = useContext(LayoutContext);
+  const { state } = useContext(LayoutContext);
   const { sideBar } = state;
+  const [activeSection, setActiveSection] = useState("");
 
   const menuItems = [
-    { title: dictionary.home, icon: home, route: "/" },
-    { title: dictionary.about, icon: about, route: "/about" },
+    { title: dictionary.home, icon: home, route: "#home" },
+    { title: dictionary.about, icon: about, route: "#about" },
     { title: dictionary.service, icon: service, route: "/service" },
     { title: dictionary.portfolio, icon: portfolio, route: "/portfolio" },
     { title: dictionary.testimonial, icon: testimonial, route: "/testimonial" },
     { title: dictionary.blog, icon: blog, route: "/blog" },
     { title: dictionary.contact, icon: contact, route: "/contact" },
   ];
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <div
       className={classNames(
@@ -50,6 +76,7 @@ function Sidebar({ dictionary }) {
             icon={item.icon}
             title={item.title}
             route={item.route}
+            isOnSight={item.route.includes(activeSection)}
           />
         ))}
       </ul>

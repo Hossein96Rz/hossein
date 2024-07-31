@@ -15,7 +15,10 @@ function Hero({ dictionary }) {
     });
   }, []);
   return (
-    <section className="flex min-h-dvh items-center justify-center text-center">
+    <section
+      id="home"
+      className="flex min-h-dvh items-center justify-center text-center"
+    >
       <div className="px-5 pt-24 text-center">
         <div
           data-aos="fade-up"
