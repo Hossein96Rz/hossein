@@ -8,7 +8,6 @@ import { LayoutContext } from "../contexts/layoutContext";
 
 function SideBarRow({ icon, title, route, isOnSight }) {
   const { state, dispatch } = useContext(LayoutContext);
-
   function linkClickHandler() {
     dispatch({ type: "toggleSideBar" });
   }

@@ -28,7 +28,6 @@ function Sidebar({ dictionary }) {
     { title: dictionary.blog, icon: blog, route: "/blog" },
     { title: dictionary.contact, icon: contact, route: "/contact" },
   ];
-
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
@@ -76,7 +75,7 @@ function Sidebar({ dictionary }) {
             icon={item.icon}
             title={item.title}
             route={item.route}
-            isOnSight={item.route.includes(activeSection)}
+            isOnSight={item.route.includes(activeSection) && activeSection}
           />
         ))}
       </ul>
