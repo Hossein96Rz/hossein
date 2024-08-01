@@ -8,6 +8,7 @@ import "./globals.css";
 import "aos/dist/aos.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
 import DarkModeProvider from "@/src/components/DarkModeProvider";
+import AosInitator from "@/src/components/AosInitator";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,8 +23,6 @@ const lalezar = Vazirmatn({
 export async function generateStaticParams() {
   return [{ lang: "fa" }, { lang: "en" }];
 }
-
-
 
 export async function generateMetadata({ params }) {
   const { lang } = params;
@@ -40,6 +39,7 @@ async function layout({ children, params }) {
   return (
     <html lang={params.lang} dir={params.lang === "fa" ? "rtl" : "ltr"}>
       <body>
+        <AosInitator />
         <LayoutContextProvider>
           <DarkModeProvider>
             <div

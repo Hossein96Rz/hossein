@@ -1,25 +1,17 @@
-"use client";
-import AOS from "aos";
 import Image from "next/image";
-import { useEffect } from "react";
 import hero from "public/content/hero.webp";
 import { ReactTyped } from "react-typed";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";
 import classNames from "classnames";
+import ReactTypedWraped from "./ReactTypedWraped";
 function Hero({ dictionary }) {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
   return (
     <section
       id="home"
       className="flex min-h-dvh items-center justify-center text-center"
     >
-      <div className="px-5 pt-24 text-center">
+      <div className="px-5 py-24 text-center">
         <div
           data-aos="fade-up"
           data-aos-delay="100"
@@ -33,28 +25,24 @@ function Hero({ dictionary }) {
             className="mx-auto rounded-full"
           />
         </div>
-        <p
+        <h2
           data-aos="fade-up"
           data-aos-delay="200"
           className="mt-4 text-xl font-medium text-[#666666] dark:text-white"
         >
           {dictionary.heroMainText}
-        </p>
+        </h2>
         <div
           data-aos="fade-up"
           data-aos-delay="300"
           className="mt-5 text-3xl font-bold text-[#1A1A1A] sm:text-5xl dark:text-white"
         >
-          <ReactTyped
-            strings={[dictionary.frontendDevelopr]}
-            typeSpeed={80}
-            startDelay={300}
-          />
+          <ReactTypedWraped text={dictionary.frontendDevelopr} />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
-          <p className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">
+          <h3 className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">
             {dictionary.description}
-          </p>
+          </h3>
         </div>
 
         <ul
