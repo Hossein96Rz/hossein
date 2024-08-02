@@ -17,5 +17,8 @@
   "years": "3+ Years",
   "ofExp": "Of Experience",
   "myInfoTitle": "Hi, I'm Hossein Rezaei",
-  "bio": "I'm a passionate Frontend web Developer (ReactJs - NextJs) with experience in web development and using cutting edge technologies. Attention to detail and ability to solve complex challenges are my distinguishing features. I'm always Looking for learning new things and it is my hobby. "
+  "bio": "I'm a passionate Frontend web Developer (ReactJs - NextJs) with experience in web development and using cutting edge technologies. Attention to detail and ability to solve complex challenges are my distinguishing features. I'm always Looking for learning new things and it is my hobby. ",
+  "whatIsMySkillLevelTitle": "What is my skill level?",
+  "whatIsMySkillLevel": "these are my self-reporting skills.",
+  "seeMore": "See More"
 }
