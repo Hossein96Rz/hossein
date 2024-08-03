@@ -1,6 +1,7 @@
 import Image from "next/image";
 import aboutImage from "public/content/about.jpg";
 import SkillBar from "./SkillBar";
+import SeeMore from "./SeeMore";
 
 function About({ dictionary }) {
   return (
@@ -12,8 +13,7 @@ function About({ dictionary }) {
         <div className="flex-row-reverse lg:flex">
           <div
             data-aos="fade-left"
-            className="pb-20 lg:w-1/2 lg:pl-28 2xl:pl-48"
-            // data-aos-offset="-230"
+            className="pb-20 lg:w-1/2 ltr:lg:pl-28 ltr:2xl:pl-48 rtl:lg:pr-28 rtl:2xl:pr-48"
           >
             <div className="relative">
               <Image
@@ -23,7 +23,7 @@ function About({ dictionary }) {
                 alt="a photo of myself"
                 className="h-[600px] w-full rounded-2xl object-cover object-top"
               />
-              <div className="absolute mx-4 flex h-36 w-36 -translate-y-[60%] flex-col items-center justify-center rounded-full bg-[#34495E] text-sm font-medium text-white md:mx-11 md:h-64 md:w-64 md:-translate-y-[80%] md:text-lg lg:-translate-x-20">
+              <div className="absolute mx-4 flex h-36 w-36 -translate-y-[60%] flex-col items-center justify-center rounded-full bg-[#34495E] text-sm font-medium text-white md:mx-11 md:h-64 md:w-64 md:-translate-y-[80%] md:text-lg ltr:lg:-translate-x-20 rtl:lg:translate-x-20">
                 <span className="text-xl font-bold md:text-4xl">
                   {dictionary.years}
                 </span>
@@ -31,11 +31,7 @@ function About({ dictionary }) {
               </div>
             </div>
           </div>
-          <div
-            data-aos="fade-right"
-            // data-aos-offset="-230"
-            className="lg:w-1/2"
-          >
+          <div data-aos="fade-right" className="lg:w-1/2">
             <div className="mb-14">
               <h3 className="mb-4 text-xl font-semibold text-[#1A1A1A] dark:text-white">
                 {dictionary.myInfoTitle}
@@ -59,9 +55,7 @@ function About({ dictionary }) {
                 <SkillBar amount={68} title="CSS" />
               </div>
               <div>
-                <button className="mt-2 rounded-md border-[2px] border-[#000] px-5 py-3 transition-all duration-500 hover:bg-[#000] hover:text-white dark:bg-white dark:hover:border-white">
-                  {dictionary.seeMore}
-                </button>
+                <SeeMore dictionary={dictionary} />
               </div>
             </div>
           </div>

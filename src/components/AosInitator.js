@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import AOS from "aos";
 import { useEffect } from "react";

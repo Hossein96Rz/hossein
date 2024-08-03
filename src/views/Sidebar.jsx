@@ -55,7 +55,7 @@ function Sidebar({ dictionary }) {
   return (
     <div
       className={classNames(
-        "fixed z-10 flex h-full w-[240px] flex-col bg-white shadow-lg transition-all duration-700 ease-out sm:w-[280px] lg:w-[320px] xl:static xl:h-full xl:transition-none ltr:-translate-x-full ltr:xl:translate-x-0 rtl:translate-x-full rtl:xl:translate-x-0 dark:bg-black",
+        "fixed z-10 flex h-full w-[240px] flex-col bg-white shadow-lg transition-all duration-700 ease-out sm:w-[280px] lg:w-[320px] xl:h-full xl:transition-none ltr:-translate-x-full ltr:xl:translate-x-0 rtl:translate-x-full rtl:xl:translate-x-0 dark:bg-black",
         { "ltr:translate-x-0 rtl:translate-x-0": sideBar },
       )}
     >

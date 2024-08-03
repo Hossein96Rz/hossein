@@ -43,7 +43,7 @@ async function layout({ children, params }) {
         <LayoutContextProvider>
           <DarkModeProvider>
             <div
-              className={classNames("h-dvh xl:flex", {
+              className={classNames("h-dvh", {
                 [poppins.className]: lang === "en",
                 [lalezar.className]: lang === "fa",
               })}
