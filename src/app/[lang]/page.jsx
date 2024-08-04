@@ -11,6 +11,7 @@ async function page({ params: { lang } }) {
     >
       <Hero dictionary={dic} />
       <About dictionary={dic} />
+      {/* <Services dictionary={div} /> */}
     </main>
   );
 }

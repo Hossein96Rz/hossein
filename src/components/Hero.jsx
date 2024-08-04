@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "public/content/hero.webp";
+import hero from "public/content/hero.jpg";
 import { ReactTyped } from "react-typed";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";
