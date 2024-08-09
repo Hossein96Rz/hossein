@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
 import DarkModeProvider from "@/src/components/DarkModeProvider";
 import AosInitator from "@/src/components/AosInitator";
-import DictionaryProvider from "@/src/components/HOCs/DictionaryProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +39,6 @@ async function layout({ children, params }) {
   return (
     <html lang={params.lang} dir={params.lang === "fa" ? "rtl" : "ltr"}>
       <body>
-        <DictionaryProvider dictionary={dic} />
         <AosInitator />
         <LayoutContextProvider>
           <DarkModeProvider>
