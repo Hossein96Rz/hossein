@@ -9,11 +9,6 @@ function ToggleSideBar() {
 
   function toggleSideBarHandler() {
     dispatch({ type: "toggleSideBar" });
-    const isDarkModePreferd = localStorage.getItem("dark-mode");
-    localStorage.setItem(
-      "dark-mode",
-      isDarkModePreferd === "true" ? "false" : "true",
-    );
   }
   return (
     <label className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black dark:bg-white">

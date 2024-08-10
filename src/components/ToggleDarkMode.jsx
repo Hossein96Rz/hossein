@@ -1,22 +1,22 @@
 "use client";
 
-import { useContext } from "react";
-import { LayoutContext } from "../contexts/layoutContext";
 import moon from "public/icons/moon.svg";
 import sun from "public/icons/sun.svg";
+import template from "public/icons/template.svg";
 import Image from "next/image";
 import cx from "classnames";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 function ToggleDarkMode({ className }) {
-  const { state, dispatch } = useContext(LayoutContext);
+  const [icon, setIcon] = useState();
+  const { theme, setTheme } = useTheme();
   function toggleDarkMode() {
-    dispatch({ type: "toggleDarkMode" });
-    const isDarkModePreferd = localStorage.getItem("dark-mode");
-    localStorage.setItem(
-      "dark-mode",
-      isDarkModePreferd === "true" ? "false" : "true",
-    );
+    setTheme(theme === "dark" ? "light" : "dark");
   }
+  useEffect(() => {
+    setIcon(theme === "light" ? moon : sun);
+  }, [theme]);
   return (
     <label
       className={cx(
@@ -26,15 +26,16 @@ function ToggleDarkMode({ className }) {
     >
       <input
         type="checkbox"
-        value={!state.isDark}
+        value={theme === "dark"}
         hidden
         onClick={toggleDarkMode}
       />
       <Image
-        src={!state.isDark ? moon : sun}
-        alt="moon"
+        src={icon || template}
+        alt="moon or sun image"
         width={24}
         height={24}
+        className={cx({ "dark:invert-[2]": !icon })}
       />
     </label>
   );

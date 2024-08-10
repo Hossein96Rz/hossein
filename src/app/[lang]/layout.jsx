@@ -7,8 +7,8 @@ import classNames from "classnames";
 import "./globals.css";
 import "aos/dist/aos.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
-import DarkModeProvider from "@/src/components/DarkModeProvider";
 import AosInitator from "@/src/components/AosInitator";
+import TWThemeProvider from "@/src/components/TWThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,11 +37,15 @@ async function layout({ children, params }) {
   const { lang } = params;
   const dic = await getDictionary(lang);
   return (
-    <html lang={params.lang} dir={params.lang === "fa" ? "rtl" : "ltr"}>
+    <html
+      lang={params.lang}
+      dir={params.lang === "fa" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <body>
-        <AosInitator />
-        <LayoutContextProvider>
-          <DarkModeProvider>
+        <TWThemeProvider>
+          <AosInitator />
+          <LayoutContextProvider>
             <div
               className={classNames("h-dvh", {
                 [poppins.className]: lang === "en",
@@ -53,8 +57,8 @@ async function layout({ children, params }) {
               <Sidebar dictionary={dic} />
               {children}
             </div>
-          </DarkModeProvider>
-        </LayoutContextProvider>
+          </LayoutContextProvider>
+        </TWThemeProvider>
       </body>
     </html>
   );

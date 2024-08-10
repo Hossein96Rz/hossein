@@ -1,16 +1,20 @@
 "use client";
 
 import classNames from "classnames";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 function Modal({ children, modal, toggle }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const ModalNode = (
     <div
       id="portal"
       className={classNames("transition-all duration-300", {
         "z-[99999] opacity-100": modal,
-        "z-0 opacity-0": !modal,
+        "z-[-1] opacity-0": !modal,
       })}
     >
       {modal && (
@@ -47,6 +51,9 @@ function Modal({ children, modal, toggle }) {
     return () => document.removeEventListener("click", outSideClickHandler);
   }, [modal]);
 
+  if (!mounted) {
+    return null;
+  }
   return createPortal(ModalNode, document.body);
 }
 

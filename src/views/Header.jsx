@@ -1,4 +1,5 @@
 import ToggleDarkMode from "../components/ToggleDarkMode";
+import ToggleLanguage from "../components/ToggleLanguage";
 import ToggleSideBar from "../components/ToggleSideBar";
 
 function Header({ dictionary }) {
@@ -11,6 +12,7 @@ function Header({ dictionary }) {
         {dictionary.name.slice(1)}
       </p>
       <div className="flex items-center gap-3">
+        <ToggleLanguage />
         <ToggleDarkMode />
         <ToggleSideBar />
       </div>

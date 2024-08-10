@@ -14,8 +14,9 @@ import blog from "public/icons/blog.svg";
 import Image from "next/image";
 import avatar from "public/avatar/avatar.jpg";
 import ToggleDarkMode from "../components/ToggleDarkMode";
+import ToggleLanguage from "../components/ToggleLanguage";
 function Sidebar({ dictionary }) {
-  const { state } = useContext(LayoutContext);
+  const { state, dispatch } = useContext(LayoutContext);
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
 
@@ -38,7 +39,7 @@ function Sidebar({ dictionary }) {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.1 },
     );
 
     sections.forEach((section) => {
@@ -52,12 +53,26 @@ function Sidebar({ dictionary }) {
     };
   }, []);
 
+  useEffect(() => {
+    function outClickHandler(event) {
+      const sidebarEl = document.getElementById("sidebar");
+      if (!sidebarEl.contains(event.target)) {
+        dispatch({ type: "toggleSideBar" });
+      }
+    }
+    if (sideBar && window.innerWidth < 1280) {
+      document.addEventListener("click", outClickHandler);
+    }
+    return () => document.removeEventListener("click", outClickHandler);
+  }, [sideBar]);
+
   return (
     <div
       className={classNames(
         "fixed z-10 flex h-full w-[240px] flex-col bg-white shadow-lg transition-all duration-700 ease-out sm:w-[280px] lg:w-[320px] xl:h-full xl:transition-none ltr:-translate-x-full ltr:xl:translate-x-0 rtl:translate-x-full rtl:xl:translate-x-0 dark:bg-black",
         { "ltr:translate-x-0 rtl:translate-x-0": sideBar },
       )}
+      id="sidebar"
     >
       <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 dark:border-b-[#999] dark:text-white">
         <div>
@@ -66,7 +81,10 @@ function Sidebar({ dictionary }) {
           </span>
           {dictionary.name.slice(1)}
         </div>
-        <ToggleDarkMode className="hidden xl:flex" />
+        <div className="flex gap-2">
+          <ToggleLanguage className="hidden text-base xl:block" />
+          <ToggleDarkMode className="hidden xl:flex" />
+        </div>
       </div>
       <ul className="px-5 pb-5 pt-9">
         {menuItems.map((item) => (

@@ -2,7 +2,6 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  isDark: false,
   sideBar: false,
   language: "",
 };
@@ -13,8 +12,6 @@ const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case "toggleDarkMode":
-      return { ...state, isDark: !state.isDark };
     case "toggleSideBar":
       return { ...state, sideBar: !state.sideBar };
     case "reset":
