@@ -1,10 +1,11 @@
 import Image from "next/image";
 import hero from "public/content/hero.jpg";
-import { ReactTyped } from "react-typed";
+import githubIcon from "public/icons/github-mark.svg";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";
 import classNames from "classnames";
 import ReactTypedWraped from "./ReactTypedWraped";
+import DownloadCvButton from "./DownloadCvButton";
 function Hero({ dictionary }) {
   return (
     <section
@@ -81,9 +82,7 @@ function Hero({ dictionary }) {
           })}
         </ul>
         <div data-aos="fade-up" data-aos-offset="-30" data-aos-delay="600">
-          <button className="mt-6 rounded-full border-2 border-[#7e7e7e] px-9 py-2 text-lg font-medium text-[#1a1a1a] transition-all duration-200 ease-linear hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:border-[#a9afc3] dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black">
-            {dictionary.downloadCv}
-          </button>
+          <DownloadCvButton dictionary={dictionary} />
         </div>
       </div>
     </section>
@@ -101,4 +100,5 @@ const contactList = [
     icon: instagramIcon,
     url: "https://www.instagram.com/hosseinrz96/",
   },
+  { icon: githubIcon, url: "https://github.com/Hossein96Rz" },
 ];

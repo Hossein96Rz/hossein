@@ -1,13 +1,13 @@
 import Header from "@/src/views/Header";
 import Sidebar from "@/src/views/Sidebar";
 import { getDictionary } from "@/src/dictionaries";
-import LangProvider from "@/src/components/LangProvider";
+import LangProvider from "@/src/utils/LangProvider";
 import { Poppins, Vazirmatn } from "next/font/google";
 import classNames from "classnames";
 import "./globals.css";
 import "aos/dist/aos.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
-import AosInitator from "@/src/components/AosInitator";
+import AosInitator from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
 
 const poppins = Poppins({
