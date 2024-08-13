@@ -1,18 +1,18 @@
 import Negotiator from "negotiator";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 let locales = ["en", "fa"];
 
-function getLocale(request) {
+function getLocale(request: NextRequest) {
   const negotiator = new Negotiator({
-    headers: { "accept-language": request.headers.get("accept-language") },
+    headers: { "accept-language": request.headers.get("accept-language")! },
   });
   const languages = negotiator.languages();
   const locale = matchLocale(languages, locales, "en");
   return locale;
 }
 
-export function middleware(request) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (pathname === "/favicon.ico") {
     return;

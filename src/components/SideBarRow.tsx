@@ -6,7 +6,14 @@ import classNames from "classnames";
 import { useContext } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
 
-function SideBarRow({ icon, title, route, isOnSight }) {
+interface SideBarRowProps {
+  icon: SVGElement;
+  title: string;
+  route: string;
+  isOnSight: boolean;
+}
+
+function SideBarRow({ icon, title, route, isOnSight }: SideBarRowProps) {
   const { state, dispatch } = useContext(LayoutContext);
   function linkClickHandler() {
     dispatch({ type: "toggleSideBar" });

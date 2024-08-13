@@ -2,8 +2,13 @@ import Image from "next/image";
 import aboutImage from "public/content/about.jpg";
 import SkillBar from "./SkillBar";
 import SeeMore from "./SeeMore";
+import { Dictionary } from "../types/dictionary";
 
-function About({ dictionary }) {
+interface AboutProps {
+  dictionary: Dictionary;
+}
+
+function About({ dictionary }: AboutProps) {
   return (
     <section className="overflow-hidden px-5 pb-36 pt-28" id="about">
       <div className="mx-auto max-w-screen-2xl">

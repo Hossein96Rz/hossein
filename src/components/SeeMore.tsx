@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Modal from "../views/Modal";
-
-function SeeMore({ dictionary }) {
+import { Dictionary } from "../types/dictionary";
+interface SeeMoreProps {
+  dictionary: Dictionary;
+}
+function SeeMore({ dictionary }: SeeMoreProps) {
   const [modal, toggleModal] = useState(false);
   function seeMoreHandler() {
     toggleModal((prev) => !prev);

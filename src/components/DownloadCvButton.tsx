@@ -1,6 +1,11 @@
 "use client";
 
-function DownloadCvButton({ dictionary }) {
+import { Dictionary } from "../types/dictionary";
+
+interface DownloadCvButtonProps {
+  dictionary: Dictionary;
+}
+function DownloadCvButton({ dictionary }: DownloadCvButtonProps) {
   async function downloadCvHandler() {
     try {
       const res = await fetch("/api/cv");

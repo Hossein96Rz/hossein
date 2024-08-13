@@ -1,4 +1,8 @@
-function SkillBar({ title, amount }) {
+interface SkillBarProps {
+  title: string;
+  amount: number;
+}
+function SkillBar({ title, amount }: SkillBarProps) {
   return (
     <div className="mb-8 w-full sm:w-1/2 sm:px-5">
       <span className="mb-3 inline-block text-base font-semibold dark:text-white">

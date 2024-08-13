@@ -1,7 +1,12 @@
 "use client";
 import { ThemeProvider } from "next-themes";
+import { ReactNode } from "react";
 
-function TWThemeProvider({ children }) {
+interface TWThemeProviderProps {
+  children: ReactNode;
+}
+
+function TWThemeProvider({ children }: TWThemeProviderProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}

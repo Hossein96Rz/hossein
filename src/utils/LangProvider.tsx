@@ -1,9 +1,14 @@
 "use client";
 
-import { useContext, useEffect } from "react";
+import { ReactNode, useContext, useEffect } from "react";
 import { LayoutContext } from "../contexts/layoutContext";
+import { Language } from "../types/language";
 
-function LangProvider({ lang }) {
+interface LangProviderProps {
+  lang: Language;
+  children: ReactNode;
+}
+function LangProvider({ lang, children }: LangProviderProps) {
   const { state, dispatch } = useContext(LayoutContext);
   useEffect(() => {
     if (!state.language) return;
@@ -15,6 +20,7 @@ function LangProvider({ lang }) {
   useEffect(() => {
     dispatch({ type: "language", payload: lang });
   }, []);
+  return children;
 }
 
 export default LangProvider;

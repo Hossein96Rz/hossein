@@ -1,8 +1,13 @@
 import About from "@/src/components/About";
 import { getDictionary } from "../../dictionaries";
 import Hero from "@/src/components/Hero";
-
-async function page({ params: { lang } }) {
+import { Language } from "@/src/types/language";
+interface pageProps {
+  params: {
+    lang: Language;
+  };
+}
+async function page({ params: { lang } }: pageProps) {
   const dic = await getDictionary(lang);
   return (
     <main

@@ -9,7 +9,20 @@ import "aos/dist/aos.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
 import AosInitator from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
+import { ReactNode } from "react";
+import { Language } from "@/src/types/language";
+interface generateMetadataProps {
+  params: {
+    lang: Language;
+  };
+}
 
+interface layoutProps {
+  children: ReactNode;
+  params: {
+    lang: Language;
+  };
+}
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -24,7 +37,7 @@ export async function generateStaticParams() {
   return [{ lang: "fa" }, { lang: "en" }];
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: generateMetadataProps) {
   const { lang } = params;
   const dic = await getDictionary(lang);
   return {
@@ -33,7 +46,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-async function layout({ children, params }) {
+async function layout({ children, params }: layoutProps) {
   const { lang } = params;
   const dic = await getDictionary(lang);
   return (
@@ -44,20 +57,22 @@ async function layout({ children, params }) {
     >
       <body>
         <TWThemeProvider>
-          <AosInitator />
-          <LayoutContextProvider>
-            <div
-              className={classNames("h-dvh", {
-                [poppins.className]: lang === "en",
-                [lalezar.className]: lang === "fa",
-              })}
-            >
-              <LangProvider lang={lang} />
-              <Header dictionary={dic} />
-              <Sidebar dictionary={dic} />
-              {children}
-            </div>
-          </LayoutContextProvider>
+          <AosInitator>
+            <LayoutContextProvider>
+              <div
+                className={classNames("h-dvh", {
+                  [poppins.className]: lang === "en",
+                  [lalezar.className]: lang === "fa",
+                })}
+              >
+                <LangProvider lang={lang}>
+                  <Header dictionary={dic} />
+                  <Sidebar dictionary={dic} />
+                  {children}
+                </LangProvider>
+              </div>
+            </LayoutContextProvider>
+          </AosInitator>
         </TWThemeProvider>
       </body>
     </html>

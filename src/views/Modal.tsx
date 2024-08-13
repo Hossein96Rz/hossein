@@ -1,10 +1,16 @@
 "use client";
 
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-function Modal({ children, modal, toggle }) {
+interface ModalProps {
+  children: ReactNode;
+  modal: boolean;
+  toggle: Function;
+}
+
+function Modal({ children, modal, toggle }: ModalProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -41,8 +47,9 @@ function Modal({ children, modal, toggle }) {
 
   useEffect(() => {
     if (!modal) return;
-    function outSideClickHandler(e) {
-      if (e.target?.id !== "portal") return;
+    function outSideClickHandler(e: Event) {
+      const target = e.target as HTMLElement;
+      if (target?.id !== "portal") return;
       toggle();
     }
 

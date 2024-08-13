@@ -6,7 +6,12 @@ import instagramIcon from "public/icons/instagram.svg";
 import classNames from "classnames";
 import ReactTypedWraped from "./ReactTypedWraped";
 import DownloadCvButton from "./DownloadCvButton";
-function Hero({ dictionary }) {
+import { Dictionary } from "../types/dictionary";
+
+interface HeroProps {
+  dictionary: Dictionary;
+}
+function Hero({ dictionary }: HeroProps) {
   return (
     <section
       id="home"
@@ -18,13 +23,7 @@ function Hero({ dictionary }) {
           data-aos-delay="100"
           className="mx-auto flex h-52 w-52 items-center justify-center md:h-64 md:w-64"
         >
-          <Image
-            src={hero}
-            alt="hero image"
-            width={"auto"}
-            height={"auto"}
-            className="mx-auto rounded-full"
-          />
+          <Image src={hero} alt="hero image" className="mx-auto rounded-full" />
         </div>
         <h2
           data-aos="fade-up"
@@ -38,7 +37,7 @@ function Hero({ dictionary }) {
           data-aos-delay="300"
           className="mt-5 text-3xl font-bold text-[#1A1A1A] sm:text-5xl dark:text-white"
         >
-          <ReactTypedWraped text={dictionary.frontendDevelopr} />
+          <ReactTypedWraped text={dictionary.frontendDeveloper} />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
           <h3 className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">

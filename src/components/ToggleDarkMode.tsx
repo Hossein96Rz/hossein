@@ -8,7 +8,11 @@ import cx from "classnames";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-function ToggleDarkMode({ className }) {
+interface ToggleDarkModeProps {
+  className?: string;
+}
+
+function ToggleDarkMode({ className }: ToggleDarkModeProps) {
   const [icon, setIcon] = useState();
   const { theme, setTheme } = useTheme();
   function toggleDarkMode() {
@@ -26,7 +30,7 @@ function ToggleDarkMode({ className }) {
     >
       <input
         type="checkbox"
-        value={theme === "dark"}
+        checked={theme === "dark"}
         hidden
         onClick={toggleDarkMode}
       />

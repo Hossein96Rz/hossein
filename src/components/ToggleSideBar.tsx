@@ -15,7 +15,7 @@ function ToggleSideBar() {
       <input
         className="h-full w-full"
         type="checkbox"
-        value={!state.sideBar}
+        checked={!state.sideBar}
         hidden
       />
       <BurgerMenuIcon isOpen={state.sideBar} toggle={toggleSideBarHandler} />

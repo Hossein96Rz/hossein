@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
-
-const BurgerMenuIcon = ({ isOpen, toggle }) => {
+interface BurgerMenuIconProps {
+  isOpen: boolean;
+  toggle: React.MouseEventHandler;
+}
+const BurgerMenuIcon = ({ isOpen, toggle }: BurgerMenuIconProps) => {
   return (
     <div className="relative h-full w-full rounded-full" onClick={toggle}>
       <button className="relative z-10 flex h-full w-full flex-col items-center justify-center space-y-1 focus:outline-none">

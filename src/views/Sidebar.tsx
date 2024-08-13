@@ -15,7 +15,13 @@ import Image from "next/image";
 import avatar from "public/avatar/avatar.jpg";
 import ToggleDarkMode from "../components/ToggleDarkMode";
 import ToggleLanguage from "../components/ToggleLanguage";
-function Sidebar({ dictionary }) {
+import { Dictionary } from "../types/dictionary";
+
+interface SidebarProps {
+  dictionary: Dictionary;
+}
+
+function Sidebar({ dictionary }: SidebarProps) {
   const { state, dispatch } = useContext(LayoutContext);
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
@@ -54,9 +60,10 @@ function Sidebar({ dictionary }) {
   }, []);
 
   useEffect(() => {
-    function outClickHandler(event) {
-      const sidebarEl = document.getElementById("sidebar");
-      if (!sidebarEl.contains(event.target)) {
+    function outClickHandler(event: Event) {
+      const target = event.target as HTMLElement;
+      const sidebarEl = document.getElementById("sidebar")!;
+      if (!sidebarEl.contains(target)) {
         dispatch({ type: "toggleSideBar" });
       }
     }
@@ -93,7 +100,9 @@ function Sidebar({ dictionary }) {
             icon={item.icon}
             title={item.title}
             route={item.route}
-            isOnSight={item.route.includes(activeSection) && activeSection}
+            isOnSight={
+              item.route.includes(activeSection) && activeSection !== ""
+            }
           />
         ))}
       </ul>

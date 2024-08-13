@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
-
 const CustomIcon = (props) => {
   const {
     src,
