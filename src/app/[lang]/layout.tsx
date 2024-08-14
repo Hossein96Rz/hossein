@@ -55,22 +55,20 @@ async function layout({ children, params }: layoutProps) {
       dir={params.lang === "fa" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body>
+      <body
+        className={classNames("h-dvh", {
+          [poppins.className]: lang === "en",
+          [lalezar.className]: lang === "fa",
+        })}
+      >
         <TWThemeProvider>
           <AosInitator>
             <LayoutContextProvider>
-              <div
-                className={classNames("h-dvh", {
-                  [poppins.className]: lang === "en",
-                  [lalezar.className]: lang === "fa",
-                })}
-              >
-                <LangProvider lang={lang}>
-                  <Header dictionary={dic} />
-                  <Sidebar dictionary={dic} />
-                  {children}
-                </LangProvider>
-              </div>
+              <LangProvider lang={lang}>
+                <Header dictionary={dic} />
+                <Sidebar dictionary={dic} />
+                {children}
+              </LangProvider>
             </LayoutContextProvider>
           </AosInitator>
         </TWThemeProvider>

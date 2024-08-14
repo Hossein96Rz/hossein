@@ -1,8 +1,10 @@
 export interface Dictionary {
+  lang: "fa" | "en";
   title: string;
   description: string;
   firstParagraph: string;
   name: string;
+  rezaei: string;
   home: string;
   about: string;
   service: string;
@@ -21,4 +23,18 @@ export interface Dictionary {
   whatIsMySkillLevelTitle: string;
   whatIsMySkillLevel: string;
   seeMore: string;
+  personalInfo: string;
+  firstName: string;
+  lastName: string;
+  age: string;
+  nationality: string;
+  freelance: string;
+  email: string;
+  year: string;
+  language: string;
+  persian: string;
+  english: string;
+  farsi: string;
+  experiences: string;
+  present: string;
 }

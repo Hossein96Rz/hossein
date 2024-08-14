@@ -1,8 +1,10 @@
 "use client";
 
 import classNames from "classnames";
+import Image from "next/image";
 import React, { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import crossIcon from "@/public/icons/cross.svg";
 
 interface ModalProps {
   children: ReactNode;
@@ -26,7 +28,7 @@ function Modal({ children, modal, toggle }: ModalProps) {
       {modal && (
         <div
           className={classNames(
-            "relative top-1/2 inline-block -translate-y-1/2 rounded-md bg-white px-3 pt-8 transition-all ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 dark:bg-[#12161f]",
+            "relative top-1/2 inline-block h-[75dvh] max-w-[90%] -translate-y-1/2 rounded-md bg-white px-5 transition-all sm:px-12 lg:max-w-5xl ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 dark:bg-[#12161f]",
             {
               "opacity-0": !modal,
               "opacity-100": modal,
@@ -34,10 +36,14 @@ function Modal({ children, modal, toggle }: ModalProps) {
           )}
         >
           <div
-            className="absolute right-2 top-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 border-black dark:border-white dark:text-white"
+            className="absolute -right-2 -top-10 flex cursor-pointer items-center justify-center rounded-full sm:-top-12 xl:-right-14 xl:-top-6 dark:text-white"
             onClick={() => toggle()}
           >
-            X
+            <Image
+              src={crossIcon}
+              className="h-8 w-8 invert-[1] sm:h-11 sm:w-11"
+              alt="an x icon as close button"
+            />
           </div>
           {children}
         </div>

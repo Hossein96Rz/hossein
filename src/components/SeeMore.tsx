@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Modal from "../views/Modal";
 import { Dictionary } from "../types/dictionary";
+import Image from "next/image";
+import SeeMoreModalContent from "./SeeMoreModalContent";
 interface SeeMoreProps {
   dictionary: Dictionary;
 }
@@ -14,7 +16,7 @@ function SeeMore({ dictionary }: SeeMoreProps) {
   return (
     <>
       <Modal modal={modal} toggle={toggleModal}>
-        <div className="h-60 w-60">lasdfjdlas</div>
+        <SeeMoreModalContent dictionary={dictionary} />
       </Modal>
       <button
         onClick={seeMoreHandler}
