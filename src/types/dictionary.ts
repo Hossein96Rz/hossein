@@ -37,4 +37,6 @@ export interface Dictionary {
   farsi: string;
   experiences: string;
   present: string;
+  azerbaijani: string;
+  whatido: string;
 }

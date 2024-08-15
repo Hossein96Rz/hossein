@@ -14,6 +14,7 @@ interface ModalProps {
 
 function Modal({ children, modal, toggle }: ModalProps) {
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -28,7 +29,7 @@ function Modal({ children, modal, toggle }: ModalProps) {
       {modal && (
         <div
           className={classNames(
-            "relative top-1/2 inline-block h-[75dvh] max-w-[90%] -translate-y-1/2 rounded-md bg-white px-5 transition-all sm:px-12 lg:max-w-5xl ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 dark:bg-[#12161f]",
+            "relative top-1/2 inline-block h-[75dvh] max-w-[90%] -translate-y-1/2 rounded-md bg-white transition-all lg:max-w-5xl ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2 dark:bg-[#12161f]",
             {
               "opacity-0": !modal,
               "opacity-100": modal,

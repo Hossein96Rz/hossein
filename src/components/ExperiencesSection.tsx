@@ -52,20 +52,6 @@ function ExperiencesSection({ dictionary }: ExperiencesSectionProps) {
         {experiences[dictionary.lang].map((item) => (
           <Timeline key={item.id} {...item} />
         ))}
-        {/* <Timeline
-          dateFrom="2023"
-          dateTo={dictionary.present}
-          location="Arman ITMD"
-          desc="Dynamic web applications development in the field of banking"
-          title="Frontend Developer"
-        />
-        <Timeline
-          dateFrom="2022"
-          dateTo="2023"
-          title="Intern Frontend Developer"
-          location="Freelance"
-          desc="Research and learn front-end programming alongside the previous job in a self-taught way with small but complex projects to experience the challenges"
-        /> */}
       </ul>
     </InformationRow>
   );

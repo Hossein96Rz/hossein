@@ -16,7 +16,12 @@ function PersonalInfoSection({ dictionary }: PersonalInfoSectionProps) {
     {
       id: 6,
       key: [dictionary.language],
-      value: [dictionary.farsi] + ", " + [dictionary.english],
+      value:
+        [dictionary.farsi] +
+        ", " +
+        [dictionary.english] +
+        ", " +
+        [dictionary.azerbaijani],
     },
   ];
   return (

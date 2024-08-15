@@ -45,7 +45,7 @@ function Sidebar({ dictionary }: SidebarProps) {
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.4 },
     );
 
     sections.forEach((section) => {

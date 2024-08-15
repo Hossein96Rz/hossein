@@ -2,13 +2,15 @@ import About from "@/src/components/About";
 import { getDictionary } from "../../dictionaries";
 import Hero from "@/src/components/Hero";
 import { Language } from "@/src/types/language";
+import { Dictionary } from "@/src/types/dictionary";
+import Services from "@/src/components/Services";
 interface pageProps {
   params: {
     lang: Language;
   };
 }
 async function page({ params: { lang } }: pageProps) {
-  const dic = await getDictionary(lang);
+  const dic = (await getDictionary(lang)) as Dictionary;
   return (
     <main
       id="main"
@@ -16,7 +18,7 @@ async function page({ params: { lang } }: pageProps) {
     >
       <Hero dictionary={dic} />
       <About dictionary={dic} />
-      {/* <Services dictionary={div} /> */}
+      <Services dictionary={dic} />
     </main>
   );
 }

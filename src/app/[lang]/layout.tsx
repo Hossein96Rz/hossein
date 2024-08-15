@@ -11,6 +11,7 @@ import AosInitator from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
+import { Dictionary } from "@/src/types/dictionary";
 interface generateMetadataProps {
   params: {
     lang: Language;
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: generateMetadataProps) {
 
 async function layout({ children, params }: layoutProps) {
   const { lang } = params;
-  const dic = await getDictionary(lang);
+  const dic = (await getDictionary(lang)) as Dictionary;
   return (
     <html
       lang={params.lang}

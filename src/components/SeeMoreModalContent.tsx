@@ -8,7 +8,7 @@ interface SeeMoreModalContentProps {
 
 function SeeMoreModalContent({ dictionary }: SeeMoreModalContentProps) {
   return (
-    <div className="lg:flex">
+    <div className="custom-scrollbar h-full overflow-auto px-5 sm:px-12 lg:flex">
       <PersonalInfoSection dictionary={dictionary} />
       <ExperiencesSection dictionary={dictionary} />
     </div>

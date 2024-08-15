@@ -12,7 +12,7 @@
   "testimonial": "رضایت‌نامه",
   "blog": "بلاگ",
   "contact": "ارتباط",
-  "heroMainText": "سلام، من حسین هستم",
+  "heroMainText": "سلام، من حسین ام",
   "frontendDeveloper": "توسعه دهنده فرانت اند",
   "downloadCv": "دانلود رزومه",
   "aboutMe": "درباره من",
@@ -35,6 +35,8 @@
   "persian": "ایرانی",
   "english": "انگلیسی",
   "farsi": "فارسی",
+  "azerbaijani": "آذری",
   "experiences": "سوابق مرتبط",
-  "present": "الان"
+  "present": "الان",
+  "whatido": "من چیکار میکنم"
 }
