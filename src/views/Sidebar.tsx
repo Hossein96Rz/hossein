@@ -16,15 +16,14 @@ import avatar from "public/avatar/avatar.jpg";
 import ToggleDarkMode from "../components/ToggleDarkMode";
 import ToggleLanguage from "../components/ToggleLanguage";
 import { Dictionary } from "../types/dictionary";
+import { getMessages } from "next-intl/server";
+import { useMessages } from "next-intl";
 
-interface SidebarProps {
-  dictionary: Dictionary;
-}
-
-function Sidebar({ dictionary }: SidebarProps) {
+function Sidebar() {
   const { state, dispatch } = useContext(LayoutContext);
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
+  const t = useMessages("Sidebar");
 
   const menuItems = [
     { title: dictionary.home, icon: home, route: "#home" },

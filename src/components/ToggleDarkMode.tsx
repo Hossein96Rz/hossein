@@ -32,7 +32,7 @@ function ToggleDarkMode({ className }: ToggleDarkModeProps) {
         type="checkbox"
         checked={theme === "dark"}
         hidden
-        onClick={toggleDarkMode}
+        onChange={toggleDarkMode}
       />
       <Image
         src={icon || template}

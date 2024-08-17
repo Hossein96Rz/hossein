@@ -1,17 +1,25 @@
 {
   "lang": "fa",
-  "title": "حسین رضائی | توسعه دهنده فرانت اند",
-  "description": "به پورتفولیوی حسین رضایی، توسعه دهنده فرانت اند با تجربه در React و NextJs خوش آمدید.",
+
+  "Metadata": {
+    "title": "حسین رضائی | توسعه دهنده فرانت اند",
+    "description": "به پورتفولیوی حسین رضایی، توسعه دهنده فرانت اند با تجربه در React و NextJs خوش آمدید."
+  },
   "firstParagraph": "این صفحه اصلی است",
-  "name": "حسین",
+  "Header": {
+    "name": "حسین"
+  },
+  "Sidebar": {
+    "home": "خانه",
+    "about": "درباره",
+    "service": "سرویس",
+    "portfolio": "پرتفو",
+    "testimonial": "رضایت‌نامه",
+    "blog": "بلاگ",
+    "contact": "ارتباط"
+  },
+
   "rezaei": "رضائی",
-  "home": "خانه",
-  "about": "درباره",
-  "service": "سرویس",
-  "portfolio": "پرتفو",
-  "testimonial": "رضایت‌نامه",
-  "blog": "بلاگ",
-  "contact": "ارتباط",
   "heroMainText": "سلام، من حسین ام",
   "frontendDeveloper": "توسعه دهنده فرانت اند",
   "downloadCv": "دانلود رزومه",

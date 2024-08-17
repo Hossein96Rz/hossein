@@ -1,6 +1,5 @@
 import Header from "@/src/views/Header";
 import Sidebar from "@/src/views/Sidebar";
-import { getDictionary } from "@/src/dictionaries";
 import LangProvider from "@/src/utils/LangProvider";
 import { Poppins, Vazirmatn } from "next/font/google";
 import classNames from "classnames";
@@ -12,16 +11,18 @@ import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
 import { Dictionary } from "@/src/types/dictionary";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 interface generateMetadataProps {
   params: {
-    lang: Language;
+    locale: Language;
   };
 }
 
 interface layoutProps {
   children: ReactNode;
   params: {
-    lang: Language;
+    locale: Language;
   };
 }
 const poppins = Poppins({
@@ -35,44 +36,45 @@ const lalezar = Vazirmatn({
 });
 
 export async function generateStaticParams() {
-  return [{ lang: "fa" }, { lang: "en" }];
+  const locales = ["en", "fa"];
+  return locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: generateMetadataProps) {
-  const { lang } = params;
-  const dic = await getDictionary(lang);
+  const { locale } = params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
-    title: dic.title,
-    description: dic.description,
+    title: t("title"),
+    description: t("description"),
   };
 }
 
 async function layout({ children, params }: layoutProps) {
-  const { lang } = params;
-  const dic = (await getDictionary(lang)) as Dictionary;
+  const { locale } = params;
+  const messages = await getMessages();
   return (
     <html
-      lang={params.lang}
-      dir={params.lang === "fa" ? "rtl" : "ltr"}
+      lang={locale}
+      dir={locale === "fa" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
       <body
         className={classNames("h-dvh", {
-          [poppins.className]: lang === "en",
-          [lalezar.className]: lang === "fa",
+          [poppins.className]: locale === "en",
+          [lalezar.className]: locale === "fa",
         })}
       >
-        <TWThemeProvider>
-          <AosInitator>
-            <LayoutContextProvider>
-              <LangProvider lang={lang}>
-                <Header dictionary={dic} />
-                <Sidebar dictionary={dic} />
+        <NextIntlClientProvider messages={messages}>
+          <TWThemeProvider>
+            <AosInitator>
+              <LayoutContextProvider>
+                <Header />
+                <Sidebar />
                 {children}
-              </LangProvider>
-            </LayoutContextProvider>
-          </AosInitator>
-        </TWThemeProvider>
+              </LayoutContextProvider>
+            </AosInitator>
+          </TWThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Modal from "../views/Modal";
 import { Dictionary } from "../types/dictionary";
-import Image from "next/image";
 import SeeMoreModalContent from "./SeeMoreModalContent";
 interface SeeMoreProps {
   dictionary: Dictionary;

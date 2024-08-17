@@ -22,6 +22,15 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "src/views/Header.tsx", "src/components/withDictionary.jsx", "src/components/CustomIcon.jsx", "src/app/[lang]/about/page.jsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/views/Header.tsx",
+    "src/components/withDictionary.jsx",
+    "src/components/CustomIcon.jsx",
+    "src/app/[locale]/about/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }
