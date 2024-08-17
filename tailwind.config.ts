@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import plugin from "tailwindcss/plugin";
 const config: Config = {
   darkMode: "selector",
   content: [
@@ -15,8 +15,30 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      perspective: {
+        none: "none",
+        "500": "500px",
+        "1000": "1000px",
+        "1500": "1500px",
+      },
     },
   },
-  plugins: [require("tailwindcss-rtl")],
+  plugins: [
+    require("tailwindcss-rtl"),
+    plugin(function ({ addUtilities, theme }) {
+      const perspectives = theme("perspective") as Record<string, string>;
+      const perspectiveUtilities = Object.keys(perspectives).reduce(
+        (acc, key) => ({
+          ...acc,
+          [`.perspective-${key}`]: {
+            perspective: perspectives[key],
+          },
+        }),
+        {} as Record<string, { perspective: string }>,
+      );
+
+      addUtilities(perspectiveUtilities);
+    }),
+  ],
 };
 export default config;

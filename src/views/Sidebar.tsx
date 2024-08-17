@@ -26,7 +26,7 @@ function Sidebar() {
   const menuItems = [
     { title: t("home"), icon: home, route: "#home" },
     { title: t("about"), icon: about, route: "#about" },
-    { title: t("service"), icon: service, route: "/service" },
+    { title: t("service"), icon: service, route: "#services" },
     { title: t("portfolio"), icon: portfolio, route: "/portfolio" },
     { title: t("testimonial"), icon: testimonial, route: "/testimonial" },
     { title: t("blog"), icon: blog, route: "/blog" },

@@ -1,5 +1,6 @@
 import About from "@/src/components/About";
 import Hero from "@/src/components/Hero";
+import Services from "@/src/components/Services";
 import { Language } from "@/src/types/language";
 import { unstable_setRequestLocale } from "next-intl/server";
 interface PageProps {
@@ -18,7 +19,7 @@ function page({ params }: PageProps) {
     >
       <Hero />
       <About />
-      {/* <Services /> */}
+      <Services />
     </main>
   );
 }

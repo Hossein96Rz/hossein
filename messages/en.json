@@ -55,6 +55,7 @@
     "present": "Present"
   },
   "Services": {
-    "whatido": "What I Do"
+    "whatido": "What I Do",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus."
   }
 }

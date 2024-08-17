@@ -62,10 +62,13 @@ async function layout({ children, params }: layoutProps) {
       suppressHydrationWarning
     >
       <body
-        className={classNames("h-dvh", {
-          [poppins.className]: locale === "en",
-          [lalezar.className]: locale === "fa",
-        })}
+        className={classNames(
+          "h-dvh text-lg font-normal leading-[30px] text-[#7e7e7e] dark:text-[#a9afc3]",
+          {
+            [poppins.className]: locale === "en",
+            [lalezar.className]: locale === "fa",
+          },
+        )}
       >
         <NextIntlClientProvider messages={messages}>
           <TWThemeProvider>
