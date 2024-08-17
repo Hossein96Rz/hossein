@@ -1,14 +1,12 @@
 import classNames from "classnames";
-import { useContext } from "react";
-import { LayoutContext } from "../contexts/layoutContext";
-import { getLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
 
 interface ToggleLanguageProps {
   className?: string;
 }
 
-async function ToggleLanguage({ className }: ToggleLanguageProps) {
-  const language = await getLocale();
+function ToggleLanguage({ className }: ToggleLanguageProps) {
+  const language = useLocale();
   return (
     <a href={language === "fa" ? "/en" : "/fa"}>
       <div

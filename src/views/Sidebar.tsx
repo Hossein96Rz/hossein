@@ -15,24 +15,22 @@ import Image from "next/image";
 import avatar from "public/avatar/avatar.jpg";
 import ToggleDarkMode from "../components/ToggleDarkMode";
 import ToggleLanguage from "../components/ToggleLanguage";
-import { Dictionary } from "../types/dictionary";
-import { getMessages } from "next-intl/server";
-import { useMessages } from "next-intl";
+import { useTranslations } from "next-intl";
 
 function Sidebar() {
   const { state, dispatch } = useContext(LayoutContext);
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
-  const t = useMessages("Sidebar");
+  const t = useTranslations("Sidebar");
 
   const menuItems = [
-    { title: dictionary.home, icon: home, route: "#home" },
-    { title: dictionary.about, icon: about, route: "#about" },
-    { title: dictionary.service, icon: service, route: "/service" },
-    { title: dictionary.portfolio, icon: portfolio, route: "/portfolio" },
-    { title: dictionary.testimonial, icon: testimonial, route: "/testimonial" },
-    { title: dictionary.blog, icon: blog, route: "/blog" },
-    { title: dictionary.contact, icon: contact, route: "/contact" },
+    { title: t("home"), icon: home, route: "#home" },
+    { title: t("about"), icon: about, route: "#about" },
+    { title: t("service"), icon: service, route: "/service" },
+    { title: t("portfolio"), icon: portfolio, route: "/portfolio" },
+    { title: t("testimonial"), icon: testimonial, route: "/testimonial" },
+    { title: t("blog"), icon: blog, route: "/blog" },
+    { title: t("contact"), icon: contact, route: "/contact" },
   ];
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -83,9 +81,9 @@ function Sidebar() {
       <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 dark:border-b-[#999] dark:text-white">
         <div>
           <span className="text-[#34495C] underline dark:text-[#557BA7]">
-            {dictionary.name[0]}
+            {t("name")[0]}
           </span>
-          {dictionary.name.slice(1)}
+          {t("name").slice(1)}
         </div>
         <div className="flex gap-2">
           <ToggleLanguage className="hidden text-base xl:block" />
@@ -118,7 +116,7 @@ function Sidebar() {
         </div>
         <div>
           <span className="font-medium text-[#1A1A1A] dark:text-white">
-            {dictionary.name}
+            {t("name")}
           </span>
           <address className="text-xs not-italic text-[#7E7E7E]">
             <a href="mailto:webmaster@example.com">hossein96rz@gmail.com</a>

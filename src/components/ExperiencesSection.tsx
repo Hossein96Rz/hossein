@@ -1,12 +1,15 @@
-import { Dictionary } from "../types/dictionary";
+import { useLocale, useTranslations } from "next-intl";
 import InformationRow from "./InformationRow";
 import Timeline from "./Timeline";
 
-interface ExperiencesSectionProps {
-  dictionary: Dictionary;
+interface Experiences {
+  en: Object[];
+  fa: Object[];
 }
 
-function ExperiencesSection({ dictionary }: ExperiencesSectionProps) {
+function ExperiencesSection() {
+  const t = useTranslations("About");
+  const lang = useLocale() as keyof Experiences;
   const experiences = {
     en: [
       {
@@ -45,11 +48,10 @@ function ExperiencesSection({ dictionary }: ExperiencesSectionProps) {
       },
     ],
   };
-
   return (
-    <InformationRow title={dictionary.experiences}>
+    <InformationRow title={t("experiences")}>
       <ul>
-        {experiences[dictionary.lang].map((item) => (
+        {experiences[lang].map((item) => (
           <Timeline key={item.id} {...item} />
         ))}
       </ul>

@@ -1,13 +1,13 @@
 "use client";
 
 import classNames from "classnames";
-import { Dictionary } from "../types/dictionary";
+import { useTranslations } from "next-intl";
 
 interface DownloadCvButtonProps {
-  dictionary: Dictionary;
   className?: string;
 }
-function DownloadCvButton({ dictionary, className }: DownloadCvButtonProps) {
+function DownloadCvButton({ className }: DownloadCvButtonProps) {
+  const t = useTranslations("CvButton");
   async function downloadCvHandler() {
     try {
       const res = await fetch("/api/cv");
@@ -36,7 +36,7 @@ function DownloadCvButton({ dictionary, className }: DownloadCvButtonProps) {
         className,
       )}
     >
-      {dictionary.downloadCv}
+      {t("downloadCv")}
     </button>
   );
 }

@@ -1,11 +1,8 @@
-import { Dictionary } from "../types/dictionary";
+import { getTranslations } from "next-intl/server";
 
-interface ServicesProps {
-  dictionary: Dictionary;
-}
-
-function Services({ dictionary }: ServicesProps) {
-  return <div></div>;
+async function Services() {
+  const t = await getTranslations("Services");
+  return <div>{t("whatido")}</div>;
 }
 
 export default Services;

@@ -1,11 +1,15 @@
 {
   "lang": "en",
-
   "Metadata": {
     "title": "Hossein Rezaei | Front-End Developer",
     "description": "Welcome to the portfolio of Hossein Rezaei, a skilled frontend developer with experience in React and NextJs."
   },
+  "firstParagraph": "This is home page",
+  "Header": {
+    "name": "Hossein"
+  },
   "Sidebar": {
+    "name": "Hossein",
     "home": "Home",
     "about": "About",
     "service": "Service",
@@ -14,36 +18,42 @@
     "blog": "Blog",
     "contact": "Contact"
   },
-  "firstParagraph": "This is home page",
-  "Header": {
-    "name": "Hossein"
+  "Hero": {
+    "heroMainText": "Hello, I'm Hossein Rezaei",
+    "frontendDeveloper": "Frontend Developer",
+    "description": "Welcome to the portfolio of Hossein Rezaei, a skilled frontend developer with experience in React and NextJs."
   },
-  "rezaei": "Rezaei",
-  "heroMainText": "Hello, I'm Hossein Rezaei",
-  "frontendDeveloper": "Frontend Developer",
-  "downloadCv": "Download CV",
-  "aboutMe": "About Me",
-  "years": "2+ Years",
-  "ofExp": "Of Experience",
-  "myInfoTitle": "Hi, I'm Hossein Rezaei",
-  "bio": "I'm a passionate Frontend web Developer (ReactJs - NextJs) with experience in web development and using cutting edge technologies. Attention to detail and ability to solve complex challenges are my distinguishing features. I'm always Looking for learning new things and it is my hobby. ",
-  "whatIsMySkillLevelTitle": "What is my skill level?",
-  "whatIsMySkillLevel": "these are my self-reporting skills.",
-  "seeMore": "See More",
-  "personalInfo": "Personal Info",
-  "firstName": "First Name",
-  "lastName": "Last Name",
-  "age": "Age",
-  "nationality": "Nationality",
-  "freelance": "Freelance",
-  "email": "Email",
-  "year": "Years",
-  "language": "Language",
-  "persian": "Persian",
-  "english": "English",
-  "farsi": "Farsi",
-  "azerbaijani": "Azerbaijani",
-  "experiences": "Related Experiences",
-  "present": "Present",
-  "whatido": "What I Do"
+  "CvButton": {
+    "downloadCv": "Download CV"
+  },
+  "About": {
+    "name": "Hossein",
+    "rezaei": "Rezaei",
+    "aboutMe": "About Me",
+    "years": "2+ Years",
+    "ofExp": "Of Experience",
+    "myInfoTitle": "Hi, I'm Hossein Rezaei",
+    "bio": "I'm a passionate Frontend web Developer (ReactJs - NextJs) with experience in web development and using cutting edge technologies. Attention to detail and ability to solve complex challenges are my distinguishing features. I'm always Looking for learning new things and it is my hobby. ",
+    "whatIsMySkillLevelTitle": "What is my skill level?",
+    "whatIsMySkillLevel": "these are my self-reporting skills.",
+    "seeMore": "See More",
+    "personalInfo": "Personal Info",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "age": "Age",
+    "nationality": "Nationality",
+    "freelance": "Freelance",
+    "email": "Email",
+    "year": "Years",
+    "language": "Language",
+    "persian": "Persian",
+    "english": "English",
+    "farsi": "Farsi",
+    "azerbaijani": "Azerbaijani",
+    "experiences": "Related Experiences",
+    "present": "Present"
+  },
+  "Services": {
+    "whatido": "What I Do"
+  }
 }

@@ -6,12 +6,10 @@ import instagramIcon from "public/icons/instagram.svg";
 import classNames from "classnames";
 import ReactTypedWraped from "./ReactTypedWraped";
 import DownloadCvButton from "./DownloadCvButton";
-import { Dictionary } from "../types/dictionary";
+import { getTranslations } from "next-intl/server";
 
-interface HeroProps {
-  dictionary: Dictionary;
-}
-function Hero({ dictionary }: HeroProps) {
+async function Hero() {
+  const t = await getTranslations("Hero");
   return (
     <section
       id="home"
@@ -30,18 +28,18 @@ function Hero({ dictionary }: HeroProps) {
           data-aos-delay="200"
           className="mt-4 text-xl font-medium text-[#666666] dark:text-white"
         >
-          {dictionary.heroMainText}
+          {t("heroMainText")}
         </h2>
         <div
           data-aos="fade-up"
           data-aos-delay="300"
           className="mt-5 text-3xl font-bold text-[#1A1A1A] sm:text-5xl dark:text-white"
         >
-          <ReactTypedWraped text={dictionary.frontendDeveloper} />
+          <ReactTypedWraped text={t("frontendDeveloper")} />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
           <h3 className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">
-            {dictionary.description}
+            {t("description")}
           </h3>
         </div>
 
@@ -81,7 +79,7 @@ function Hero({ dictionary }: HeroProps) {
           })}
         </ul>
         <div data-aos="fade-up" data-aos-offset="-30" data-aos-delay="600">
-          <DownloadCvButton dictionary={dictionary} />
+          <DownloadCvButton />
         </div>
       </div>
     </section>

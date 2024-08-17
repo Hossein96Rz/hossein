@@ -1,32 +1,26 @@
-import { Dictionary } from "../types/dictionary";
+"use client";
+import { useTranslations } from "next-intl";
 import DownloadCvButton from "./DownloadCvButton";
 import InformationRow from "./InformationRow";
 
-interface PersonalInfoSectionProps {
-  dictionary: Dictionary;
-}
+function PersonalInfoSection() {
+  const t = useTranslations("About");
 
-function PersonalInfoSection({ dictionary }: PersonalInfoSectionProps) {
   const personalInfo = [
-    { id: 1, key: [dictionary.firstName], value: [dictionary.name] },
-    { id: 2, key: [dictionary.lastName], value: [dictionary.rezaei] },
-    { id: 3, key: [dictionary.age], value: "28 " + [dictionary.year] },
-    { id: 4, key: [dictionary.nationality], value: [dictionary.persian] },
-    { id: 5, key: [dictionary.email], value: "hossein96rz@gmail.com" },
+    { id: 1, key: [t("firstName")], value: [t("name")] },
+    { id: 2, key: [t("lastName")], value: [t("rezaei")] },
+    { id: 3, key: [t("age")], value: "28 " + [t("year")] },
+    { id: 4, key: [t("nationality")], value: [t("persian")] },
+    { id: 5, key: [t("email")], value: "hossein96rz@gmail.com" },
     {
       id: 6,
-      key: [dictionary.language],
-      value:
-        [dictionary.farsi] +
-        ", " +
-        [dictionary.english] +
-        ", " +
-        [dictionary.azerbaijani],
+      key: [t("language")],
+      value: [t("farsi")] + ", " + [t("english")] + ", " + [t("azerbaijani")],
     },
   ];
   return (
     <div className="lg:flex-shrink-0 lg:flex-grow-0 lg:basis-1/2">
-      <InformationRow title={dictionary.personalInfo}>
+      <InformationRow title={t("personalInfo")}>
         <ul className="sm:flex sm:flex-wrap">
           {personalInfo.map((item) => (
             <li
@@ -42,7 +36,7 @@ function PersonalInfoSection({ dictionary }: PersonalInfoSectionProps) {
             </li>
           ))}
         </ul>
-        <DownloadCvButton className="mt-0" dictionary={dictionary} />
+        <DownloadCvButton className="mt-0" />
       </InformationRow>
     </div>
   );
