@@ -51,7 +51,8 @@
     "english": "انگلیسی",
     "farsi": "فارسی",
     "azerbaijani": "آذری",
-    "experiences": "سوابق مرتبط",
+    "relatedExperiences": "سوابق مرتبط",
+    "unrelatedExperiences": "سوابق نامرتبط",
     "present": "الان"
   },
   "Services": {

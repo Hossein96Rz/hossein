@@ -50,7 +50,8 @@
     "english": "English",
     "farsi": "Farsi",
     "azerbaijani": "Azerbaijani",
-    "experiences": "Related Experiences",
+    "relatedExperiences": "Related Experiences",
+    "unrelatedExperiences": "Unrelated Experiences",
     "present": "Present"
   },
   "Services": {

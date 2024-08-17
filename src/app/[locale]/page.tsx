@@ -10,7 +10,7 @@ function page() {
     >
       <Hero />
       <About />
-      <Services />
+      {/* <Services /> */}
     </main>
   );
 }

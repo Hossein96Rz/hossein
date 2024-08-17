@@ -10,7 +10,7 @@ interface Experiences {
 function ExperiencesSection() {
   const t = useTranslations("About");
   const lang = useLocale() as keyof Experiences;
-  const experiences = {
+  const relatedExperiences = {
     en: [
       {
         id: "1",
@@ -48,14 +48,45 @@ function ExperiencesSection() {
       },
     ],
   };
+  const unrelatedExperiences = {
+    en: [
+      {
+        id: "1",
+        dateFrom: "2018",
+        dateTo: "2024",
+        location: "Golrang industrial group",
+        desc: "",
+        title: "Warehouse Employee",
+      },
+    ],
+    fa: [
+      {
+        id: "1",
+        dateFrom: "1397",
+        dateTo: "1402",
+        location: "گروه صنعتی گلرنگ",
+        desc: "",
+        title: "کارمند انبار",
+      },
+    ],
+  };
   return (
-    <InformationRow title={t("experiences")}>
-      <ul>
-        {experiences[lang].map((item) => (
-          <Timeline key={item.id} {...item} />
-        ))}
-      </ul>
-    </InformationRow>
+    <div>
+      <InformationRow title={t("relatedExperiences")}>
+        <ul>
+          {relatedExperiences[lang].map((item) => (
+            <Timeline key={item.id} {...item} />
+          ))}
+        </ul>
+      </InformationRow>
+      <InformationRow title={t("unrelatedExperiences")} className="pb-4">
+        <ul>
+          {unrelatedExperiences[lang].map((item) => (
+            <Timeline key={item.id} {...item} />
+          ))}
+        </ul>
+      </InformationRow>
+    </div>
   );
 }
 
