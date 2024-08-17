@@ -1,8 +1,16 @@
 import About from "@/src/components/About";
 import Hero from "@/src/components/Hero";
-import Services from "@/src/components/Services";
+import { Language } from "@/src/types/language";
+import { unstable_setRequestLocale } from "next-intl/server";
+interface PageProps {
+  params: {
+    locale: Language;
+  };
+}
+function page({ params }: PageProps) {
+  const { locale } = params;
+  unstable_setRequestLocale(locale);
 
-function page() {
   return (
     <main
       id="main"

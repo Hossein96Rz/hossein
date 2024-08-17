@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "@/public/content/hero.jpg";
+import hero from "public/content/hero.jpg";
 import githubIcon from "public/icons/github-mark.svg";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";

@@ -1,6 +1,5 @@
 import Header from "@/src/views/Header";
 import Sidebar from "@/src/views/Sidebar";
-import LangProvider from "@/src/utils/LangProvider";
 import { Poppins, Vazirmatn } from "next/font/google";
 import classNames from "classnames";
 import "./globals.css";
@@ -10,9 +9,12 @@ import AosInitator from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
-import { Dictionary } from "@/src/types/dictionary";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 interface generateMetadataProps {
   params: {
     locale: Language;
@@ -52,6 +54,7 @@ export async function generateMetadata({ params }: generateMetadataProps) {
 async function layout({ children, params }: layoutProps) {
   const { locale } = params;
   const messages = await getMessages();
+  unstable_setRequestLocale(locale);
   return (
     <html
       lang={locale}
