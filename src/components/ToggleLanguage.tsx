@@ -15,7 +15,7 @@ function ToggleLanguage({ className }: ToggleLanguageProps) {
           className,
         )}
       >
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pt-1">
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pt-1 text-black dark:text-white">
           {language === "fa" ? "EN" : "فا"}
         </span>
       </div>

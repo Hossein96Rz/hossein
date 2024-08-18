@@ -56,6 +56,11 @@
   },
   "Services": {
     "whatido": "What I Do",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus."
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.",
+    "learnMore": "Learn More",
+    "dynamicWebApp": "Dynamic Web Application development",
+    "scaleableAndMaintainable": "Scaleable & Maintainable code",
+    "responsiveWebDesign": "Responsive Web Design",
+    "bestPracticeDesign": "Following best practices"
   }
 }

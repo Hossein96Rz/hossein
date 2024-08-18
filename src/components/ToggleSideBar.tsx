@@ -11,7 +11,7 @@ function ToggleSideBar() {
     dispatch({ type: "toggleSideBar" });
   }
   return (
-    <label className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black dark:bg-white">
+    <label className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-black transition-all duration-500 dark:bg-white">
       <input
         className="h-full w-full"
         type="checkbox"
