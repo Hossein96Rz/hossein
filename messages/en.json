@@ -61,6 +61,20 @@
     "dynamicWebApp": "Dynamic Web Application development",
     "scaleableAndMaintainable": "Scaleable & Maintainable code",
     "responsiveWebDesign": "Responsive Web Design",
-    "bestPracticeDesign": "Following best practices"
+    "bestPracticeDesign": "Following best practices",
+    "dynamicWebAppDesc": "Dynamic web applications in frontend development are interactive websites that update content and respond to user actions in real-time without needing to reload the entire page. These applications use technologies like JavaScript, AJAX, and WebSockets to fetch and display data dynamically, providing a seamless user experience. They can adjust to user input, change views, and present personalized content, making them more engaging and responsive. Dynamic web apps are essential for modern user interfaces where immediacy and interactivity are key to user satisfaction. This approach contrasts with static websites, which serve the same content to all users.",
+    "scaleableAndMaintainableDesc": "Scalable and maintainable code in frontend development refers to writing code that can easily grow with the project and be understood, modified, and extended by other developers over time. Scalability ensures the codebase can handle increasing complexity and larger datasets without significant performance issues. Maintainability focuses on clean, well-documented, and modular code, making it easier to troubleshoot, update, and enhance. Adopting best practices like component reusability, consistent naming conventions, and code organization helps achieve both scalability and maintainability, leading to a more efficient development process.",
+    "responsiveWebDesignDesc": "Responsive web design is an approach in frontend development that ensures a website's layout and content automatically adjust to fit different screen sizes and devices. It uses flexible grids, fluid images, and CSS media queries to create a seamless user experience across desktops, tablets, and mobile phones. The goal is to make the website look and function well on any device without needing separate versions for each platform. By prioritizing responsiveness, developers can cater to a wider audience and improve accessibility. This approach is essential for modern web development.",
+    "bestPracticeDesignDesc": "Following best practices in frontend development means adhering to established guidelines and techniques that ensure code quality, performance, and maintainability. It includes writing clean, well-structured code, optimizing assets, using semantic HTML, and following accessibility standards. Best practices also involve consistent version control, thorough testing, and effective documentation. By following these principles, developers can create scalable, efficient, and user-friendly applications that are easier to manage and evolve over time."
+  },
+  "Contact": {
+    "contact": "Contact",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.",
+    "email": "Email",
+    "contactMessage": "I am always open to discussing work or partnerships.",
+    "namePlaceHolder": "Name *",
+    "userEmailPlaceHolder": "Email *",
+    "messagePlaceHolder": "Message *",
+    "submit": "Submit"
   }
 }

@@ -2,7 +2,7 @@
 
 import moon from "public/icons/moon.svg";
 import sun from "public/icons/sun.svg";
-import template from "public/icons/template.svg";
+import template from "public/icons/unknown-darkmode.svg";
 import Image from "next/image";
 import cx from "classnames";
 import { useTheme } from "next-themes";
@@ -15,6 +15,7 @@ interface ToggleDarkModeProps {
 function ToggleDarkMode({ className }: ToggleDarkModeProps) {
   const [icon, setIcon] = useState();
   const { theme, setTheme } = useTheme();
+  console.log(theme);
   function toggleDarkMode() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
@@ -35,11 +36,13 @@ function ToggleDarkMode({ className }: ToggleDarkModeProps) {
         onChange={toggleDarkMode}
       />
       <Image
-        src={icon || template}
+        src={theme === "system" ? template : icon || template}
         alt="moon or sun image"
         width={24}
         height={24}
-        className={cx({ "dark:invert-[2]": !icon })}
+        className={cx({
+          "dark:invert": !icon,
+        })}
       />
     </label>
   );

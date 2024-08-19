@@ -24,12 +24,9 @@ function ServiceCard({ children, fadeInDelay, title, icon }: ServiceCardProps) {
   function handleMove(e: MouseEvent) {
     if (!elRef.current) return;
 
-    // const height = elRef.current.clientHeight;
     const width = elRef.current.clientWidth;
     const xVal = e.layerX;
-    // const yVal = e.layerY;
     const yRotation = -20 * ((xVal - width / 2) / width);
-    // const xRotation = -20 * ((yVal - height / 2) / height);
     const xRotation = 20;
 
     const transformString =

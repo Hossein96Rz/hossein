@@ -27,10 +27,10 @@ function Sidebar() {
     { title: t("home"), icon: home, route: "#home" },
     { title: t("about"), icon: about, route: "#about" },
     { title: t("service"), icon: service, route: "#services" },
-    { title: t("portfolio"), icon: portfolio, route: "/portfolio" },
-    { title: t("testimonial"), icon: testimonial, route: "/testimonial" },
-    { title: t("blog"), icon: blog, route: "/blog" },
-    { title: t("contact"), icon: contact, route: "/contact" },
+    // { title: t("portfolio"), icon: portfolio, route: "/portfolio" },
+    // { title: t("testimonial"), icon: testimonial, route: "/testimonial" },
+    // { title: t("blog"), icon: blog, route: "/blog" },
+    { title: t("contact"), icon: contact, route: "#contact" },
   ];
   useEffect(() => {
     const sections = document.querySelectorAll("section");

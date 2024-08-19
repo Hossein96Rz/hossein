@@ -1,4 +1,5 @@
 import About from "@/src/components/About";
+import Contact from "@/src/components/Contact";
 import Hero from "@/src/components/Hero";
 import Services from "@/src/components/Services";
 import { Language } from "@/src/types/language";
@@ -20,6 +21,7 @@ function page({ params }: PageProps) {
       <Hero />
       <About />
       <Services />
+      <Contact />
     </main>
   );
 }
