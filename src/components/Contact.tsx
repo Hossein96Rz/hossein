@@ -3,6 +3,7 @@ import Section from "./Section";
 import Image from "next/image";
 import emailIcon from "public/icons/email.webp";
 import ContactForm from "./ContactForm";
+import Map from "./Map";
 
 async function Contact() {
   const t = await getTranslations("Contact");
@@ -33,6 +34,7 @@ async function Contact() {
           </div>
         </div>
         <ContactForm />
+        <Map />
       </div>
     </Section>
   );
