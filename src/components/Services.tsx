@@ -6,10 +6,10 @@ import scaleableIcon from "public/icons/scaleable.svg";
 import responsiveIcon from "public/icons/responsive.svg";
 import bestPracticeIcon from "public/icons/best.svg";
 import DynamicServiceContent from "./DynamicServiceContent";
-import dynamicImage from "public/content/services/dynamic.jpg";
-import testImage from "public/content/services/testing.jpg";
-import responsiveImage from "public/content/services/responsive.jpg";
-import bestPracticeImage from "public/content/services/bestPractices.jpg";
+import dynamicImage from "public/content/services/dynamic.jpeg";
+import testImage from "public/content/services/testing.jpeg";
+import responsiveImage from "public/content/services/responsive.jpeg";
+import bestPracticeImage from "public/content/services/bestPractices.jpeg";
 async function Services() {
   const t = await getTranslations("Services");
   return (
