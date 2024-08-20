@@ -15,7 +15,6 @@ interface ToggleDarkModeProps {
 function ToggleDarkMode({ className }: ToggleDarkModeProps) {
   const [icon, setIcon] = useState();
   const { theme, setTheme } = useTheme();
-  console.log(theme);
   function toggleDarkMode() {
     setTheme(theme === "dark" ? "light" : "dark");
   }

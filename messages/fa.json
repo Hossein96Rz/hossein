@@ -77,5 +77,8 @@
     "userEmailPlaceHolder": "ایمیل *",
     "messagePlaceHolder": "متن پیام *",
     "submit": "ارسال پیام"
+  },
+  "Map": {
+    "popUpMsg": "محل کار فعلی من"
   }
 }

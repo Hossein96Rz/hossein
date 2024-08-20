@@ -9,7 +9,7 @@ async function ContactForm() {
   const t = await getTranslations("Contact");
   return (
     <div
-      className="mb-12 rounded-md bg-[#F5F8FC] px-5 py-12 md:px-11 ltr:lg:mr-7 rtl:lg:ml-7 dark:bg-[#191C26]"
+      className="mb-12 rounded-md bg-[#F5F8FC] px-5 py-12 md:px-11 lg:basis-1/2 ltr:lg:mr-7 rtl:lg:ml-7 dark:bg-[#191C26]"
       data-aos="fade-right"
       data-aos-delay={200}
     >

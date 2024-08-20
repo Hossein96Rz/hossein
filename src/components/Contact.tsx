@@ -3,10 +3,16 @@ import Section from "./Section";
 import Image from "next/image";
 import emailIcon from "public/icons/email.webp";
 import ContactForm from "./ContactForm";
-import Map from "./Map";
+import dynamic from "next/dynamic";
+
+const LazyMap = dynamic(() => import("./Map"), {
+  loading: () => <h1>Loading Map....</h1>,
+  ssr: false,
+});
 
 async function Contact() {
   const t = await getTranslations("Contact");
+
   return (
     <Section title={t("contact")} id="contact">
       <p className="mt-6 max-w-xl">{t("summary")}</p>
@@ -24,7 +30,7 @@ async function Contact() {
               height={25}
             />
           </div>
-          <div className="grow pl-4">
+          <div className="grow ltr:pl-4 rtl:pr-4">
             <h3 className="mb-1 text-xl font-medium text-[#1a1a1a] dark:text-white">
               {t("email")}
             </h3>
@@ -33,8 +39,10 @@ async function Contact() {
             </address>
           </div>
         </div>
-        <ContactForm />
-        <Map />
+        <div className="flex flex-col lg:flex-row">
+          <ContactForm />
+          <LazyMap />
+        </div>
       </div>
     </Section>
   );
