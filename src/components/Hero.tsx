@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero from "public/content/hero.jpg";
+import hero from "public/content/hero.jpeg";
 import githubIcon from "public/icons/github-mark.svg";
 import linkedinIcon from "public/icons/linkedin.svg";
 import instagramIcon from "public/icons/instagram.svg";
@@ -21,7 +21,12 @@ async function Hero() {
           data-aos-delay="100"
           className="mx-auto flex h-52 w-52 items-center justify-center md:h-64 md:w-64"
         >
-          <Image src={hero} alt="hero image" className="mx-auto rounded-full" />
+          <Image
+            src={hero}
+            placeholder="blur"
+            alt="hero image"
+            className="mx-auto rounded-full"
+          />
         </div>
         <h2
           data-aos="fade-up"

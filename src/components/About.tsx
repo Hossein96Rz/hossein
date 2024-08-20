@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImage from "public/content/about.jpg";
+import aboutImage from "public/content/about.jpeg";
 import SkillBar from "./SkillBar";
 import SeeMore from "./SeeMore";
 import { getTranslations } from "next-intl/server";
@@ -19,6 +19,7 @@ async function About() {
               src={aboutImage}
               height={445}
               width={599}
+              placeholder="blur"
               alt="a photo of myself"
               className="h-[600px] w-full rounded-2xl object-cover object-top"
             />
