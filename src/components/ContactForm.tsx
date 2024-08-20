@@ -1,10 +1,36 @@
 import { getTranslations } from "next-intl/server";
 import Button from "./Button";
+import { MongoClient, ServerApiVersion } from "mongodb";
+
+const uri =
+  "mongodb+srv://hossein96rz:R2ELLJetWnk16bgg@contact.hgqos.mongodb.net/?retryWrites=true&w=majority&appName=contact";
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
 async function ContactForm() {
   async function submitMessage(formData: FormData) {
     "use server";
-    
+    async function run() {
+      try {
+        // Connect the client to the server (optional starting in v4.7)
+        await client.connect();
+        // Send a ping to confirm a successful connection
+        await client.db("admin").command({ ping: 1 });
+        console.log(
+          "Pinged your deployment. You successfully connected to MongoDB!",
+        );
+      } finally {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+      }
+    }
+    run().catch(console.dir);
   }
 
   const t = await getTranslations("Contact");
