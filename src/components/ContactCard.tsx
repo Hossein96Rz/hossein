@@ -11,8 +11,11 @@ interface ContactCardProps {
 
 async function ContactCard({ icon, title, children }: ContactCardProps) {
   return (
-    <div data-aos="fade-right" className="mb-7 ltr:md:pl-7 rtl:md:pr-7 md:basis-1/2">
-      <div className="flex rounded-md bg-[#F5F8FC] p-5 dark:bg-[#191C26]">
+    <div
+      data-aos="fade-right"
+      className="mb-7 md:basis-1/2 lg:basis-1/3 ltr:md:pl-7 rtl:md:pr-7"
+    >
+      <div className="flex rounded-md bg-[#F5F8FC] p-5 pr-1 dark:bg-[#191C26]">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#34495e]">
           <Image
             src={icon}

@@ -20,7 +20,9 @@ async function Contact() {
       <div className="flex flex-col flex-wrap pb-7 pt-14 md:flex-row ltr:md:-ml-7 rtl:md:-mr-7">
         <ContactCard icon={emailIcon} title={t("email")}>
           <address>
-            <a href="mailto:hossein96rz@gmail.com">hossein96rz@gmail.com</a>
+            <a href="mailto:hossein96rz@gmail.com" className="text-base">
+              hossein96rz@gmail.com
+            </a>
           </address>
         </ContactCard>
         <ContactCard icon={linkedInIcon} title={t("linkedIn")}>
