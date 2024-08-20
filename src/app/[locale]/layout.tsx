@@ -15,6 +15,7 @@ import {
   getTranslations,
   unstable_setRequestLocale,
 } from "next-intl/server";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 interface generateMetadataProps {
   params: {
     locale: Language;
