@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: generateMetadataProps) {
     title: t("title"),
     description: t("description"),
   };
+  
 }
 
 async function layout({ children, params }: layoutProps) {
