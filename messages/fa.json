@@ -25,7 +25,8 @@
     "description": "به پورتفولیوی حسین رضایی، توسعه دهنده فرانت اند با تجربه در React و NextJs خوش آمدید."
   },
   "CvButton": {
-    "downloadCv": "دانلود رزومه"
+    "downloadCv": "دانلود رزومه",
+    "downloadSuccessful": "رزومه با موفقیت دانلود شد."
   },
   "About": {
     "name": "حسین",

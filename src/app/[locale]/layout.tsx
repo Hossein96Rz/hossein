@@ -4,6 +4,7 @@ import { Poppins, Vazirmatn } from "next/font/google";
 import classNames from "classnames";
 import "./globals.css";
 import "aos/dist/aos.css";
+import "react-toastify/dist/ReactToastify.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
 import AosInitator from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
@@ -16,6 +17,7 @@ import {
   unstable_setRequestLocale,
 } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ToastifyContainer from "@/src/components/ToastifyContainer";
 interface generateMetadataProps {
   params: {
     locale: Language;
@@ -50,7 +52,6 @@ export async function generateMetadata({ params }: generateMetadataProps) {
     title: t("title"),
     description: t("description"),
   };
-  
 }
 
 async function layout({ children, params }: layoutProps) {
@@ -77,6 +78,7 @@ async function layout({ children, params }: layoutProps) {
           <TWThemeProvider>
             <AosInitator>
               <LayoutContextProvider>
+                <ToastifyContainer />
                 <Header />
                 <Sidebar />
                 {children}

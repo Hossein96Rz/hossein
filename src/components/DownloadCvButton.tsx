@@ -2,6 +2,7 @@
 
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
+import { toast } from "react-toastify";
 
 interface DownloadCvButtonProps {
   className?: string;
@@ -21,6 +22,7 @@ function DownloadCvButton({ className }: DownloadCvButtonProps) {
         a.click();
         a.remove();
         window.URL.revokeObjectURL(url);
+        toast.success(t("downloadSuccessful"));
       } else {
         console.error("Failed to download file");
       }

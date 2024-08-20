@@ -4,7 +4,6 @@ import Button from "./Button";
 async function ContactForm() {
   async function submitMessage(formData: FormData) {
     "use server";
-    
   }
 
   const t = await getTranslations("Contact");

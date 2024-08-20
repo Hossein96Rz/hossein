@@ -22,7 +22,7 @@ function Modal({ children, modal, toggle }: ModalProps) {
     <div
       id="portal"
       className={classNames("transition-all duration-300", {
-        "z-[99999] opacity-100": modal,
+        "z-[9998] opacity-100": modal,
         "z-[-1] opacity-0": !modal,
       })}
     >
