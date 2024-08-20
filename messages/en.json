@@ -75,7 +75,10 @@
     "namePlaceHolder": "Name *",
     "userEmailPlaceHolder": "Email *",
     "messagePlaceHolder": "Message *",
-    "submit": "Submit"
+    "submit": "Submit",
+    "linkedIn": "LinkedIn",
+    "instagram": "Instagram",
+    "link": "Link"
   },
   "Map": {
     "popUpMsg": "I'm alreay working Here"

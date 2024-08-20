@@ -76,7 +76,10 @@
     "namePlaceHolder": "نام *",
     "userEmailPlaceHolder": "ایمیل *",
     "messagePlaceHolder": "متن پیام *",
-    "submit": "ارسال پیام"
+    "submit": "ارسال پیام",
+    "linkedIn": "لینکداین",
+    "instagram": "اینستاگرام",
+    "link": "لینک"
   },
   "Map": {
     "popUpMsg": "محل کار فعلی من"

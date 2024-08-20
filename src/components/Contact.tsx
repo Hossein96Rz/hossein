@@ -1,12 +1,13 @@
 import { getTranslations } from "next-intl/server";
 import Section from "./Section";
-import Image from "next/image";
 import emailIcon from "public/icons/email.webp";
+import instagramIcon from "public/icons/instagram.svg";
+import linkedInIcon from "public/icons/linkedin.svg";
 import ContactForm from "./ContactForm";
 import dynamic from "next/dynamic";
+import ContactCard from "./ContactCard";
 
 const LazyMap = dynamic(() => import("./Map"), {
-  loading: () => <h1>Loading Map....</h1>,
   ssr: false,
 });
 
@@ -16,33 +17,26 @@ async function Contact() {
   return (
     <Section title={t("contact")} id="contact">
       <p className="mt-6 max-w-xl">{t("summary")}</p>
-      <div className="pb-7 pt-14">
-        <div
-          data-aos="fade-right"
-          className="mb-14 flex rounded-md bg-[#F5F8FC] p-5 md:w-max dark:bg-[#191C26]"
-        >
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#34495e]">
-            <Image
-              src={emailIcon}
-              className="invert"
-              alt="email icon"
-              width={25}
-              height={25}
-            />
-          </div>
-          <div className="grow ltr:pl-4 rtl:pr-4">
-            <h3 className="mb-1 text-xl font-medium text-[#1a1a1a] dark:text-white">
-              {t("email")}
-            </h3>
-            <address>
-              <a href="mailto:hossein96rz@gmail.com">hossein96rz@gmail.com</a>
-            </address>
-          </div>
-        </div>
-        <div className="flex flex-col lg:flex-row">
-          <ContactForm />
-          <LazyMap />
-        </div>
+      <div className="flex flex-col flex-wrap pb-7 pt-14 md:flex-row ltr:md:-ml-7 rtl:md:-mr-7">
+        <ContactCard icon={emailIcon} title={t("email")}>
+          <address>
+            <a href="mailto:hossein96rz@gmail.com">hossein96rz@gmail.com</a>
+          </address>
+        </ContactCard>
+        <ContactCard icon={linkedInIcon} title={t("linkedIn")}>
+          <a href="https://www.linkedin.com/in/hossein-rezaei-596049233/">
+            <address>{t("link")}</address>
+          </a>
+        </ContactCard>
+        <ContactCard icon={instagramIcon} title={t("instagram")}>
+          <a href="https://www.instagram.com/hosseinrz96/">
+            <address>{t("link")}</address>
+          </a>
+        </ContactCard>
+      </div>
+      <div className="flex flex-col lg:flex-row">
+        <ContactForm />
+        <LazyMap />
       </div>
     </Section>
   );
