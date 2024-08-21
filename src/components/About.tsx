@@ -49,10 +49,11 @@ async function About() {
             </p>
             <div className="pt-10 sm:-mx-5 sm:flex sm:flex-wrap">
               <SkillBar amount={95} title="JavaScript" />
-              <SkillBar amount={80} title="ReactJs" />
+              <SkillBar amount={95} title="ReactJs" />
               <SkillBar amount={80} title="NextJs" />
-              <SkillBar amount={97} title="HTML" />
-              <SkillBar amount={68} title="CSS" />
+              <SkillBar amount={100} title="HTML" />
+              <SkillBar amount={95} title="CSS" />
+              <SkillBar amount={90} title="GIT" />
             </div>
             <div>
               <SeeMore />
