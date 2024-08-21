@@ -19,9 +19,9 @@
     "contact": "Contact"
   },
   "Hero": {
-    "heroMainText": "Hello, I'm Hossein Rezaei",
+    "heroMainText": "Hello, I'm Hossein",
     "frontendDeveloper": "Frontend Developer",
-    "description": "Welcome to the portfolio of Hossein Rezaei, a skilled frontend developer with experience in React and NextJs."
+    "description": "Welcome to my portfolio"
   },
   "CvButton": {
     "downloadCv": "Download CV",
@@ -34,11 +34,11 @@
     "aboutMe": "About Me",
     "years": "2+ Years",
     "ofExp": "Of Experience",
-    "myInfoTitle": "Hi, I'm Hossein Rezaei",
-    "bio": "I'm a passionate Frontend web Developer (ReactJs - NextJs) with experience in web development and using cutting edge technologies. Attention to detail and ability to solve complex challenges are my distinguishing features. I'm always Looking for learning new things and it is my hobby. ",
-    "whatIsMySkillLevelTitle": "What is my skill level?",
-    "whatIsMySkillLevel": "these are my self-reporting skills.",
-    "seeMore": "See More",
+    "myInfoTitle": "I'm Hossein Rezaei 😁",
+    "bio": "A passionate front-end web developer with over 2 years of experience in web development and using new and advanced technologies. Solving complex challenges and creating new things excites and motivates me. I’m always looking to learn new things, and it has almost become a hobby and a constant habit. I work with JavaScript and am proficient in the React library. I enjoy working with NextJs, and this website was developed using this framework.",
+    "whatIsMySkillLevelTitle": "My skills level?",
+    "whatIsMySkillLevel": "My main skills include the following:",
+    "seeMore": "More about me...",
     "personalInfo": "Personal Info",
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -58,7 +58,7 @@
   },
   "Services": {
     "whatido": "What I Do",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.",
+    "summary": "A front-end developer is responsible for designing and implementing the visible and interactive parts of websites and web applications.",
     "learnMore": "Learn More",
     "dynamicWebApp": "Dynamic Web Application development",
     "scaleableAndMaintainable": "Scaleable & Maintainable code",
@@ -71,7 +71,7 @@
   },
   "Contact": {
     "contact": "Contact",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum sit nibh amet egestas tellus.",
+    "summary": "I am available through the following social networks or the form you can see below:",
     "email": "Email",
     "contactMessage": "I am always open to discussing work or partnerships.",
     "namePlaceHolder": "Name *",
