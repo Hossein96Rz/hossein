@@ -10,6 +10,7 @@ interface DownloadCvButtonProps {
 function DownloadCvButton({ className }: DownloadCvButtonProps) {
   const t = useTranslations("CvButton");
   async function downloadCvHandler() {
+    toast(t("downloading"), { autoClose: false });
     try {
       const res = await fetch("/api/cv");
       if (res.ok) {
@@ -22,11 +23,14 @@ function DownloadCvButton({ className }: DownloadCvButtonProps) {
         a.click();
         a.remove();
         window.URL.revokeObjectURL(url);
+        toast.dismiss();
         toast.success(t("downloadSuccessful"));
       } else {
         console.error("Failed to download file");
+        toast.error("Failed to download file");
       }
     } catch (e) {
+      toast.error("Failed to download file");
       console.error(e);
     }
   }

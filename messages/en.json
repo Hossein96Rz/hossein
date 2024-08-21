@@ -25,7 +25,8 @@
   },
   "CvButton": {
     "downloadCv": "Download CV",
-    "downloadSuccessful": "CV successfully downloaded."
+    "downloadSuccessful": "CV successfully downloaded.",
+    "downloading": "Getting things ready to download..."
   },
   "About": {
     "name": "Hossein",
@@ -82,6 +83,7 @@
     "sendingMessage": "Sending message...",
     "linkedIn": "LinkedIn",
     "instagram": "Instagram",
+    "telegram": "Telegram",
     "link": "Link",
     "validationError": "Please check the form values."
   },
