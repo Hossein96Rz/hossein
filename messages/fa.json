@@ -77,10 +77,13 @@
     "namePlaceHolder": "نام *",
     "userEmailPlaceHolder": "ایمیل *",
     "messagePlaceHolder": "متن پیام *",
+    "errorMessage": "خطا در ارسال اطلاعات.",
+    "successMessage": "اطلاعات با موفقیت ارسال شد.",
     "submit": "ارسال پیام",
     "linkedIn": "لینکداین",
     "instagram": "اینستاگرام",
-    "link": "لینک"
+    "link": "لینک",
+    "validationError": "لطفاً مقادیر فرم را بررسی کنید."
   },
   "Map": {
     "popUpMsg": "محل کار فعلی من"

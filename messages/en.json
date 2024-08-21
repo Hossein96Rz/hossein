@@ -77,9 +77,12 @@
     "userEmailPlaceHolder": "Email *",
     "messagePlaceHolder": "Message *",
     "submit": "Submit",
+    "errorMessage": "Error sending information.",
+    "successMessage": "Information sent successfully.",
     "linkedIn": "LinkedIn",
     "instagram": "Instagram",
-    "link": "Link"
+    "link": "Link",
+    "validationError": "Please check the form values."
   },
   "Map": {
     "popUpMsg": "I'm alreay working Here"
