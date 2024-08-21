@@ -3,24 +3,30 @@ import { toast } from "react-toastify";
 import Button from "./Button";
 import { useTranslations } from "next-intl";
 import { validateFormData } from "../utils/utils";
-import { useRef } from "react";
+import { FormEventHandler, useRef, useState } from "react";
 
 function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("Contact");
+  const [isLoading, setIsLoading] = useState(false);
 
-  async function submitMessage(formData: FormData) {
+  async function submitMessage(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(event.currentTarget);
     const name = formData.get("name")?.toString() as string;
     const email = formData.get("userEmail")?.toString() as string;
     const message = formData.get("message")?.toString() as string;
 
     if (!validateFormData({ name, email, message })) {
       toast.error(t("validationError"));
-
+      setIsLoading(false);
       return;
     }
 
     try {
+      toast(t("sendingMessage"), { autoClose: false });
       const res = await fetch("/api/contact-submission", {
         method: "POST",
         headers: {
@@ -28,7 +34,7 @@ function ContactForm() {
         },
         body: JSON.stringify({ name, email, message }),
       });
-
+      toast.dismiss();
       if (res.ok) {
         toast.success(t("successMessage"));
         formRef.current?.reset();
@@ -38,6 +44,8 @@ function ContactForm() {
       }
     } catch (error) {
       toast.error(t("errorMessage"));
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -50,31 +58,37 @@ function ContactForm() {
       <p className="mb-5 text-[20px] font-semibold text-[#1a1a1a] transition-all duration-300 group-hover:text-white dark:text-white">
         {t("contactMessage")}
       </p>
-      <form ref={formRef} action={submitMessage}>
+      <form ref={formRef} onSubmit={submitMessage}>
         <input
+          disabled={isLoading}
           type="text"
           name="name"
           minLength={3}
           placeholder={t("namePlaceHolder")}
           required
-          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
         <input
           type="email"
+          disabled={isLoading}
           name="userEmail"
           minLength={6}
+          dir="ltr"
           placeholder={t("userEmailPlaceHolder")}
           required
-          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 rtl:placeholder:text-right dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
         <textarea
           name="message"
+          disabled={isLoading}
           placeholder={t("messagePlaceHolder")}
           required
           minLength={8}
-          className="mb-14 h-12 w-full resize-none border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full resize-none border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
-        <Button type="submit">{t("submit")}</Button>
+        <Button disabled={isLoading} type="submit">
+          {t("submit")}
+        </Button>
       </form>
     </div>
   );
