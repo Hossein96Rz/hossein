@@ -15,7 +15,7 @@ async function Footer() {
             >
               Edina Next
             </a>
-            , but entirely created by Hossein Rezaei.
+            , created by Hossein Rezaei.
           </p>
         </footer>
       ) : (
@@ -29,7 +29,7 @@ async function Footer() {
             >
               Edina Next
             </a>
-            ، اما پیاده سازی شده به طور کامل توسط حسین رضائی.
+            ، پیاده سازی شده توسط حسین رضائی.
           </p>
         </footer>
       )}
