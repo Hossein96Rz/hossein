@@ -76,14 +76,13 @@ async function layout({ children, params }: layoutProps) {
         <SpeedInsights />
         <NextIntlClientProvider messages={messages}>
           <TWThemeProvider>
-            <AosInitator>
-              <LayoutContextProvider>
-                <ToastifyContainer />
-                <Header />
-                <Sidebar />
-                {children}
-              </LayoutContextProvider>
-            </AosInitator>
+            <AosInitator />
+            <LayoutContextProvider>
+              <ToastifyContainer />
+              <Header />
+              <Sidebar />
+              {children}
+            </LayoutContextProvider>
           </TWThemeProvider>
         </NextIntlClientProvider>
       </body>
