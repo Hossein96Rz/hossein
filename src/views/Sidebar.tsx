@@ -77,7 +77,7 @@ function Sidebar() {
       )}
       id="sidebar"
     >
-      <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 dark:border-b-[#999] dark:text-white">
+      <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 xl:p-10 dark:border-b-[#999] dark:text-white">
         <div>
           <span className="text-[#34495C] underline dark:text-[#557BA7]">
             {t("name")[0]}
@@ -102,7 +102,7 @@ function Sidebar() {
           />
         ))}
       </ul>
-      <div className="mt-auto flex h-[90px] gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 dark:border-[#34495e]">
+      <div className="mt-auto flex gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 xl:p-10 dark:border-[#34495e]">
         <div className="h-[50px] w-[50px]">
           <Image
             quality={20}
