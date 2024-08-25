@@ -3,7 +3,6 @@ import { createContext, ReactNode, useReducer, Dispatch } from "react";
 
 interface LayoutState {
   sideBar: boolean;
-  language: string;
 }
 
 interface LayoutAction {
@@ -13,7 +12,6 @@ interface LayoutAction {
 
 const initialState: LayoutState = {
   sideBar: false,
-  language: "",
 };
 
 interface LayoutContextProps {
