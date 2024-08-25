@@ -22,7 +22,6 @@ function Sidebar() {
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
   const t = useTranslations("Sidebar");
-
   const menuItems = [
     { title: t("home"), icon: home, route: "#home" },
     { title: t("about"), icon: about, route: "#about" },
@@ -90,7 +89,7 @@ function Sidebar() {
           <ToggleDarkMode className="hidden xl:flex" />
         </div>
       </div>
-      <ul className="px-5 pb-5 pt-9">
+      <ul className="px-5 pb-5 pt-9 xl:px-10 xl:pb-14 xl:pt-14">
         {menuItems.map((item) => (
           <SideBarRow
             key={item.title}

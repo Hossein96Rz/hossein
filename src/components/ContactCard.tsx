@@ -10,6 +10,7 @@ interface ContactCardProps {
 }
 
 async function ContactCard({ icon, title, children }: ContactCardProps) {
+
   return (
     <div
       data-aos="fade-right"

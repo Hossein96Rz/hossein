@@ -9,6 +9,7 @@ import DownloadCvButton from "./DownloadCvButton";
 import { getTranslations } from "next-intl/server";
 
 async function Hero() {
+
   const t = await getTranslations("Hero");
   return (
     <section
