@@ -27,10 +27,10 @@ function PersonalInfoSection() {
               className="flex-shrink-0 flex-grow-0 basis-full pb-5 sm:basis-1/2"
               key={item.id}
             >
-              <span className="pb-5 text-base font-normal text-[#7e7e7e] dark:text-[#a9afc3;]">
+              <span className="text-custom-text-light pb-5 text-base font-normal dark:text-[#a9afc3;]">
                 {item.key + ": "}
               </span>
-              <span className="font-medium text-[#34495e] dark:text-white">
+              <span className="text-custom-dark font-medium dark:text-white">
                 {item.value}
               </span>
             </li>

@@ -38,7 +38,7 @@ function DownloadCvButton({ className }: DownloadCvButtonProps) {
     <button
       onClick={downloadCvHandler}
       className={classNames(
-        "mt-6 rounded-full border-2 border-[#7e7e7e] px-9 py-2 text-lg font-medium text-[#1a1a1a] transition-all duration-200 ease-linear hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:border-[#a9afc3] dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black",
+        "text-custom-text-dark border-custom-text-light dark:border-custom-text-light-dark mt-6 rounded-full border-2 px-9 py-2 text-lg font-medium transition-all duration-200 ease-linear hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black",
         className,
       )}
     >

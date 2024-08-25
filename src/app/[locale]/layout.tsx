@@ -66,7 +66,7 @@ async function layout({ children, params }: layoutProps) {
     >
       <body
         className={classNames(
-          "h-dvh text-lg font-normal leading-[30px] text-[#7e7e7e] dark:text-[#a9afc3]",
+          "text-custom-text-light dark:text-custom-text-light-dark h-dvh text-lg font-normal leading-[30px]",
           {
             [poppins.className]: locale === "en",
             [lalezar.className]: locale === "fa",

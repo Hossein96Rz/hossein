@@ -6,7 +6,7 @@ import ToggleSideBar from "../components/ToggleSideBar";
 async function Header() {
   const t = await getTranslations("Header");
   return (
-    <header className="fixed z-10 flex h-20 w-full items-center justify-between bg-white p-4 shadow-md transition-all ease-linear xl:hidden dark:bg-[#34495e] dark:shadow-gray-800">
+    <header className="dark:bg-custom-dark fixed z-10 flex h-20 w-full items-center justify-between bg-white p-4 shadow-md transition-all ease-linear xl:hidden dark:shadow-gray-800">
       <p className="text-3xl font-black text-slate-800 dark:text-white">
         <span className="text-[#34495C] underline dark:text-[#557BA7]">
           {t("name")[0]}

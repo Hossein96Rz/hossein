@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "custom-dark": "#34495E",
+        "custom-text-dark": "#1A1A1A",
+        "custom-text-light": "#7e7e7e",
+        "custom-text-light-dark": "#A9AFC3",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
