@@ -18,6 +18,7 @@ import {
 } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ToastifyContainer from "@/src/components/ToastifyContainer";
+
 interface generateMetadataProps {
   params: {
     locale: Language;
@@ -30,6 +31,7 @@ interface layoutProps {
     locale: Language;
   };
 }
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -56,7 +58,7 @@ export async function generateMetadata({ params }: generateMetadataProps) {
 
 async function layout({ children, params }: layoutProps) {
   const { locale } = params;
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   unstable_setRequestLocale(locale);
   return (
     <html
@@ -66,7 +68,7 @@ async function layout({ children, params }: layoutProps) {
     >
       <body
         className={classNames(
-          "text-custom-text-light dark:text-custom-text-light-dark h-dvh text-lg font-normal leading-[30px]",
+          "h-dvh text-lg font-normal leading-[30px] text-custom-text-light dark:text-custom-text-light-dark",
           {
             [poppins.className]: locale === "en",
             [lalezar.className]: locale === "fa",
