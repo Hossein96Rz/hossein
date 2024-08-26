@@ -14,13 +14,13 @@ interface ToggleDarkModeProps {
 
 function ToggleDarkMode({ className }: ToggleDarkModeProps) {
   const [icon, setIcon] = useState();
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, theme, setTheme } = useTheme();
   function toggleDarkMode() {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }
   useEffect(() => {
-    setIcon(theme === "light" ? moon : sun);
-  }, [theme]);
+    setIcon(resolvedTheme === "light" ? moon : sun);
+  }, [resolvedTheme]);
   return (
     <label
       className={cx(
@@ -30,7 +30,7 @@ function ToggleDarkMode({ className }: ToggleDarkModeProps) {
     >
       <input
         type="checkbox"
-        checked={theme === "dark"}
+        checked={resolvedTheme === "dark"}
         hidden
         onChange={toggleDarkMode}
       />
@@ -40,7 +40,7 @@ function ToggleDarkMode({ className }: ToggleDarkModeProps) {
         width={24}
         height={24}
         className={cx({
-          "dark:invert": !icon,
+          invert: theme === "system" && resolvedTheme === "dark",
         })}
       />
     </label>
