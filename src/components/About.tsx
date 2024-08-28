@@ -46,12 +46,12 @@ async function About() {
               {t("whatIsMySkillLevel")}
             </p>
             <div className="pt-10 sm:-mx-5 sm:flex sm:flex-wrap">
-              <SkillBar amount={100} title="JavaScript" />
-              <SkillBar amount={100} title="ReactJs" />
-              <SkillBar amount={95} title="NextJs" />
-              <SkillBar amount={100} title="HTML" />
-              <SkillBar amount={100} title="CSS" />
-              <SkillBar amount={90} title="GIT" />
+              <SkillBar amount={80} title="JavaScript" />
+              <SkillBar amount={90} title="ReactJs" />
+              <SkillBar amount={85} title="NextJs" />
+              <SkillBar amount={90} title="HTML" />
+              <SkillBar amount={90} title="CSS" />
+              <SkillBar amount={80} title="GIT" />
             </div>
             <div>
               <SeeMore />
