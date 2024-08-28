@@ -22,12 +22,12 @@ function ServiceCardContent({ title, icon }: ServiceCardContentProps) {
         alt={`an icon to indroduce ${title}`}
         className="mb-6 transition-all duration-300 group-hover:invert dark:invert"
       />
-      <h3 className="mb-5 text-[20px] font-semibold text-[#1a1a1a] transition-all duration-300 group-hover:text-white dark:text-white">
+      <h3 className="text-custom-text-dark mb-5 text-[20px] font-semibold transition-all duration-300 group-hover:text-white dark:text-white">
         {title}
       </h3>
-      <div className="relative text-nowrap text-lg text-[#7e7e7e] transition-all duration-300 group-hover:text-white dark:text-[#a9afc3]">
+      <div className="text-custom-text-light dark:text-custom-text-light-dark relative text-nowrap text-lg transition-all duration-300 group-hover:text-white">
         {t("learnMore")}
-        <span className="after:content-* absolute top-1/2 inline-block h-[2px] w-[10px] rounded-[50px] bg-[#7e7e7e] transition-all duration-700 before:absolute before:bottom-[-2px] before:right-0 before:h-[2px] before:w-[6px] before:-rotate-45 before:rounded-[50px] before:bg-[#7e7e7e] before:transition-all before:duration-700 after:absolute after:right-0 after:top-[-2px] after:h-[2px] after:w-[6px] after:rotate-45 after:rounded-[50px] after:bg-[#7e7e7e] after:transition-all after:duration-700 group-hover:w-[30px] group-hover:bg-white group-hover:before:bg-white group-hover:after:bg-white ltr:ml-4 rtl:mr-4 rtl:scale-x-[-1]" />
+        <span className="after:content-* bg-custom-text-light before:bg-custom-text-light after:bg-custom-text-light absolute top-1/2 inline-block h-[2px] w-[10px] rounded-[50px] transition-all duration-700 before:absolute before:bottom-[-2px] before:right-0 before:h-[2px] before:w-[6px] before:-rotate-45 before:rounded-[50px] before:transition-all before:duration-700 after:absolute after:right-0 after:top-[-2px] after:h-[2px] after:w-[6px] after:rotate-45 after:rounded-[50px] after:transition-all after:duration-700 group-hover:w-[30px] group-hover:bg-white group-hover:before:bg-white group-hover:after:bg-white ltr:ml-4 rtl:mr-4 rtl:scale-x-[-1]" />
       </div>
     </div>
   );

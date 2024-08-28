@@ -7,9 +7,9 @@ async function Footer() {
       {locale === "en" ? (
         <footer className="px-5 py-1 text-sm">
           <p>
-            &copy; 2024 Inspired by{" "}
+            &copy; 2024 UI Inspired by{" "}
             <a
-              href="https://edina-next.vercel.app/"
+              href="https://edina-next.vercel.app/home-sidebar"
               className="font-bold italic"
               target="_blank"
             >
@@ -21,9 +21,9 @@ async function Footer() {
       ) : (
         <footer className="px-5 py-1 text-sm">
           <p>
-            &copy; 1403 الهام‌گرفته از{" "}
+            &copy; 1403 الهام‌گرفته طرح از{" "}
             <a
-              href="https://edina-next.vercel.app/"
+              href="https://edina-next.vercel.app/home-sidebar"
               className="font-bold italic"
               target="_blank"
             >

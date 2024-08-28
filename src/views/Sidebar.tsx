@@ -22,7 +22,6 @@ function Sidebar() {
   const { sideBar } = state;
   const [activeSection, setActiveSection] = useState("");
   const t = useTranslations("Sidebar");
-
   const menuItems = [
     { title: t("home"), icon: home, route: "#home" },
     { title: t("about"), icon: about, route: "#about" },
@@ -78,7 +77,7 @@ function Sidebar() {
       )}
       id="sidebar"
     >
-      <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 dark:border-b-[#999] dark:text-white">
+      <div className="flex min-h-[81px] items-center justify-between border-b-[1px] border-b-black p-4 text-3xl font-black text-slate-800 xl:min-h-28 xl:p-10 dark:border-b-[#999] dark:text-white">
         <div>
           <span className="text-[#34495C] underline dark:text-[#557BA7]">
             {t("name")[0]}
@@ -90,7 +89,7 @@ function Sidebar() {
           <ToggleDarkMode className="hidden xl:flex" />
         </div>
       </div>
-      <ul className="px-5 pb-5 pt-9">
+      <ul className="px-5 pb-5 pt-9 xl:px-10 xl:pb-14 xl:pt-14">
         {menuItems.map((item) => (
           <SideBarRow
             key={item.title}
@@ -103,7 +102,7 @@ function Sidebar() {
           />
         ))}
       </ul>
-      <div className="mt-auto flex h-[90px] gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 dark:border-[#34495e]">
+      <div className="dark:border-custom-dark mt-auto flex gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 xl:p-10">
         <div className="h-[50px] w-[50px]">
           <Image
             quality={20}
@@ -111,14 +110,14 @@ function Sidebar() {
             width={50}
             height={50}
             src={avatar}
-            className="rounded-full border border-gray-400 dark:border-[#34495e]"
+            className="dark:border-custom-dark rounded-full border border-gray-400"
           />
         </div>
         <div>
-          <span className="font-medium text-[#1A1A1A] dark:text-white">
+          <span className="text-custom-text-dark font-medium dark:text-white">
             {t("name")}
           </span>
-          <address className="text-xs not-italic text-[#7E7E7E]">
+          <address className="text-custom-text-light text-xs not-italic">
             <a href="mailto:webmaster@example.com">hossein96rz@gmail.com</a>
           </address>
         </div>

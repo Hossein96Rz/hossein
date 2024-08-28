@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+// Forces static generation for the route
 export const dynamic = "force-static";
 
 export async function GET() {

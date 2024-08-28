@@ -16,7 +16,7 @@ async function ContactCard({ icon, title, children }: ContactCardProps) {
       className="mb-7 md:basis-1/2 lg:basis-1/3 ltr:md:pl-7 rtl:md:pr-7"
     >
       <div className="flex rounded-md bg-[#F5F8FC] p-5 ltr:pr-1 rtl:pl-1 dark:bg-[#191C26]">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#34495e]">
+        <div className="bg-custom-dark flex h-14 w-14 items-center justify-center rounded-full">
           <Image
             src={icon}
             className="invert"
@@ -26,7 +26,7 @@ async function ContactCard({ icon, title, children }: ContactCardProps) {
           />
         </div>
         <div className="grow ltr:pl-4 rtl:pr-4">
-          <h3 className="mb-1 text-xl font-medium text-[#1a1a1a] dark:text-white">
+          <h3 className="text-custom-text-dark mb-1 text-xl font-medium dark:text-white">
             {title}
           </h3>
           {children}

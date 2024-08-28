@@ -11,6 +11,7 @@ import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/react";
 import {
   getMessages,
   getTranslations,
@@ -18,6 +19,7 @@ import {
 } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ToastifyContainer from "@/src/components/ToastifyContainer";
+
 interface generateMetadataProps {
   params: {
     locale: Language;
@@ -30,6 +32,7 @@ interface layoutProps {
     locale: Language;
   };
 }
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -56,7 +59,7 @@ export async function generateMetadata({ params }: generateMetadataProps) {
 
 async function layout({ children, params }: layoutProps) {
   const { locale } = params;
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   unstable_setRequestLocale(locale);
   return (
     <html
@@ -66,7 +69,7 @@ async function layout({ children, params }: layoutProps) {
     >
       <body
         className={classNames(
-          "h-dvh text-lg font-normal leading-[30px] text-[#7e7e7e] dark:text-[#a9afc3]",
+          "h-dvh text-lg font-normal leading-[30px] text-custom-text-light dark:text-custom-text-light-dark",
           {
             [poppins.className]: locale === "en",
             [lalezar.className]: locale === "fa",
@@ -74,16 +77,16 @@ async function layout({ children, params }: layoutProps) {
         )}
       >
         <SpeedInsights />
+        <Analytics />
         <NextIntlClientProvider messages={messages}>
           <TWThemeProvider>
-            <AosInitator>
-              <LayoutContextProvider>
-                <ToastifyContainer />
-                <Header />
-                <Sidebar />
-                {children}
-              </LayoutContextProvider>
-            </AosInitator>
+            <AosInitator />
+            <LayoutContextProvider>
+              <ToastifyContainer />
+              <Header />
+              <Sidebar />
+              {children}
+            </LayoutContextProvider>
           </TWThemeProvider>
         </NextIntlClientProvider>
       </body>

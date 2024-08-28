@@ -2,17 +2,15 @@
 
 import AOS from "aos";
 import { ReactNode, useEffect } from "react";
-interface AosInitatorProps {
-  children: ReactNode;
-}
-function AosInitator({ children }: AosInitatorProps) {
+
+function AosInitator(): ReactNode {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
   }, []);
-  return children;
+  return;
 }
 
 export default AosInitator;

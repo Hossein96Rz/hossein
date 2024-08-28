@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 
 function ToastifyContainer() {
   const locale = useLocale();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   return (
     <ToastContainer
       position={locale === "fa" ? "bottom-left" : "bottom-right"}
@@ -17,7 +17,7 @@ function ToastifyContainer() {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme={theme}
+      theme={resolvedTheme}
     />
   );
 }

@@ -38,12 +38,12 @@ async function Hero() {
         <div
           data-aos="fade-up"
           data-aos-delay="300"
-          className="mt-5 text-3xl font-bold text-[#1A1A1A] sm:text-5xl dark:text-white"
+          className="text-custom-text-dark mt-5 text-3xl font-bold sm:text-5xl dark:text-white"
         >
           <ReactTypedWraped text={t("frontendDeveloper")} />
         </div>
         <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
-          <h3 className="mx-auto max-w-lg text-center text-base font-light text-[#7E7E7E] sm:text-lg dark:text-[#a9afc3]">
+          <h3 className="text-custom-text-light dark:text-custom-text-light-dark mx-auto max-w-lg text-center text-base font-light sm:text-lg">
             {t("description")}
           </h3>
         </div>

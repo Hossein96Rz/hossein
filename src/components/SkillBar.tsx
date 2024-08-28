@@ -8,9 +8,9 @@ function SkillBar({ title, amount }: SkillBarProps) {
       <span className="mb-3 inline-block text-base font-semibold dark:text-white">
         {title}
       </span>
-      <div className="h-4 border border-[#7e7e7e] p-[2px] dark:border-[#555]">
+      <div className="border-custom-text-light h-4 border p-[2px] dark:border-[#555]">
         <div
-          className={`h-full bg-[#34495e]`}
+          className={`bg-custom-dark h-full`}
           style={{ width: `${amount}%` }}
         ></div>
       </div>

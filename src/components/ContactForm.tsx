@@ -51,11 +51,11 @@ function ContactForm() {
 
   return (
     <div
-      className="mb-12 rounded-md bg-[#F5F8FC] px-5 py-12 md:px-11 lg:basis-1/2 ltr:lg:mr-7 rtl:lg:ml-7 dark:bg-[#191C26]"
+      className="mb-12 rounded-md bg-[#F5F8FC] px-5 py-12 md:px-11 lg:h-[563px] lg:basis-1/2 ltr:lg:mr-7 rtl:lg:ml-7 dark:bg-[#191C26]"
       data-aos="fade-right"
       data-aos-delay={200}
     >
-      <p className="mb-5 text-[20px] font-semibold text-[#1a1a1a] transition-all duration-300 group-hover:text-white dark:text-white">
+      <p className="mb-5 max-w-[360px] text-[20px] font-semibold text-custom-text-dark transition-all duration-300 group-hover:text-white dark:text-white">
         {t("contactMessage")}
       </p>
       <form ref={formRef} onSubmit={submitMessage}>
@@ -66,7 +66,7 @@ function ContactForm() {
           minLength={3}
           placeholder={t("namePlaceHolder")}
           required
-          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-custom-text-light outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
         <input
           type="email"
@@ -76,7 +76,7 @@ function ContactForm() {
           dir="ltr"
           placeholder={t("userEmailPlaceHolder")}
           required
-          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 rtl:placeholder:text-right dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-custom-text-light outline-none focus:border-black disabled:opacity-40 rtl:placeholder:text-right dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
         <textarea
           name="message"
@@ -84,7 +84,7 @@ function ContactForm() {
           placeholder={t("messagePlaceHolder")}
           required
           minLength={8}
-          className="mb-14 h-12 w-full resize-none border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-[#7e7e7e] outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
+          className="mb-14 h-12 w-full resize-none border-b border-[#cbd3d9] bg-[#F5F8FC] p-2 text-custom-text-light outline-none focus:border-black disabled:opacity-40 dark:border-[#a9afc37f] dark:bg-[#191C26] dark:focus:border-white"
         />
         <Button disabled={isLoading} type="submit">
           {t("submit")}

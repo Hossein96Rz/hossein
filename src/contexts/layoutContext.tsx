@@ -1,25 +1,14 @@
 "use client";
 import { createContext, ReactNode, useReducer, Dispatch } from "react";
-
-interface LayoutState {
-  sideBar: boolean;
-  language: string;
-}
-
-interface LayoutAction {
-  type: string;
-  payload?: any;
-}
-
-const initialState: LayoutState = {
-  sideBar: false,
-  language: "",
-};
+import { LayoutAction, LayoutState } from "../types/models";
 
 interface LayoutContextProps {
   state: LayoutState;
   dispatch: Dispatch<LayoutAction>;
 }
+const initialState: LayoutState = {
+  sideBar: false,
+};
 
 export const LayoutContext = createContext<LayoutContextProps>({
   state: initialState,

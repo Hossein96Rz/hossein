@@ -15,7 +15,7 @@ function Section({ children, title, id, className }: SectionProps) {
       id={id}
     >
       <div className="mx-auto max-w-screen-2xl">
-        <h3 className=" text-4xl font-bold text-[#1A1A1A] md:text-5xl dark:text-white">
+        <h3 className="text-custom-text-dark text-4xl font-bold md:text-5xl dark:text-white">
           {title}
         </h3>
         {children}

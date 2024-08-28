@@ -8,7 +8,10 @@ interface ToggleLanguageProps {
 function ToggleLanguage({ className }: ToggleLanguageProps) {
   const language = useLocale();
   return (
-    <a href={language === "fa" ? "/en" : "/fa"}>
+    <a
+      href={language === "fa" ? "/en" : "/fa"}
+      aria-label="language toggle button"
+    >
       <div
         className={classNames(
           "relative h-11 w-11 cursor-pointer rounded-full bg-gray-200 dark:bg-slate-500",

@@ -83,7 +83,7 @@ function ServiceCard({ children, fadeInDelay, title, icon }: ServiceCardProps) {
         data-aos="fade-right"
         data-aos-delay={fadeInDelay}
         data-aos-duration="1200"
-        className="mb-8 w-full cursor-pointer md:w-1/2 md:pl-8 lg:min-h-[310px] lg:w-1/4"
+        className="mb-8 w-full cursor-pointer hover:z-[1] md:w-1/2 md:pl-8 lg:min-h-[310px] lg:w-1/4"
         onClick={toggleHandler}
       >
         <div
