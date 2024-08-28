@@ -37,7 +37,7 @@ function Map() {
         onTouchEndCapture={() => setIsHovered(false)}
       >
         <MapContainer
-          className="z-0 h-[350px] w-full rounded-md border-[5px] border-[#F5F8FC] dark:border-[#191C26]"
+          className="z-0 h-[350px] w-full rounded-md border-[5px] border-[#F5F8FC] lg:h-[563px] dark:border-[#191C26]"
           center={armanITlocation}
           zoom={14}
           scrollWheelZoom={false}
