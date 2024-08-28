@@ -11,6 +11,7 @@ import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/react";
 import {
   getMessages,
   getTranslations,
@@ -76,6 +77,7 @@ async function layout({ children, params }: layoutProps) {
         )}
       >
         <SpeedInsights />
+        <Analytics />
         <NextIntlClientProvider messages={messages}>
           <TWThemeProvider>
             <AosInitator />
