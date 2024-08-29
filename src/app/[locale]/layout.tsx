@@ -19,6 +19,7 @@ import {
 } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ToastifyContainer from "@/src/components/ToastifyContainer";
+import { Viewport } from "next";
 
 interface generateMetadataProps {
   params: {
@@ -48,14 +49,19 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#191C26" },
+    { media: "(prefers-color-scheme: dark)", color: "#fff" },
+  ],
+};
+
 export async function generateMetadata({ params }: generateMetadataProps) {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
     title: t("title"),
     description: t("description"),
-    "theme-color": "#191C26",
-    "apple-mobile-web-app-status-bar-style": "#191C26",
   };
 }
 
