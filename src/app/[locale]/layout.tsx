@@ -54,6 +54,8 @@ export async function generateMetadata({ params }: generateMetadataProps) {
   return {
     title: t("title"),
     description: t("description"),
+    "theme-color": "#191C26",
+    "apple-mobile-web-app-status-bar-style": "#191C26",
   };
 }
 
