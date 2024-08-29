@@ -13,16 +13,14 @@ interface ToggleDarkModeProps {
 }
 
 function ToggleDarkMode({ className }: ToggleDarkModeProps) {
-  const [icon, setIcon] = useState<string>(moon); // Default to moon icon
   const { resolvedTheme, theme, setTheme } = useTheme();
-
+  let icon = moon;
+  icon = resolvedTheme === "light" ? moon : sun;
   function toggleDarkMode() {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }
 
   useEffect(() => {
-    setIcon(resolvedTheme === "light" ? moon : sun);
-
     const themeColor = resolvedTheme === "dark" ? "#34495E" : "#FFFFFF";
     let metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
