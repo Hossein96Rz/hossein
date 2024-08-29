@@ -54,10 +54,6 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#34495E" },
     { media: "(prefers-color-scheme: dark)", color: "#ffffff" },
   ],
-  // "apple-mobile-web-app-status-bar-style": [
-  //   { media: "(prefers-color-scheme: light)", color: "#34495E" },
-  //   { media: "(prefers-color-scheme: dark)", color: "#fff" },
-  // ],
 };
 
 export async function generateMetadata({ params }: generateMetadataProps) {
