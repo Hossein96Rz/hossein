@@ -25,8 +25,8 @@ function ExperiencesSection() {
         dateFrom: "2022",
         dateTo: "2023",
         title: "Frontend Developer",
-        location: "Freelance",
-        desc: "Research and learn front-end programming alongside the previous job in a self-taught way with small but complex projects to experience the challenges",
+        location: "Zanjan Food",
+        desc: "Collaboration in the development of online food delivery tools",
       },
     ],
     fa: [
@@ -43,8 +43,8 @@ function ExperiencesSection() {
         dateFrom: "1401",
         dateTo: "1402",
         title: "توسعه دهنده فرانت اند",
-        location: "آزاد",
-        desc: "پژوهش و یادگیری توسعه فرانت‌اند به صورت خودآموز در کنار شغل قبلی با انجام پروژه‌های کوچک اما پیچیده برای یادگیری و تجربه چالش‌ها",
+        location: "زنجان فود",
+        desc: "همکاری در توسعه وبسایل تحویل غذای آنلاین",
       },
     ],
   };

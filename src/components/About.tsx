@@ -21,7 +21,7 @@ async function About() {
               alt="a photo of myself"
               className="h-[500px] w-full rounded-2xl object-cover object-left md:h-[600px]"
             />
-            <div className="bg-custom-dark absolute mx-4 flex h-36 w-36 -translate-y-[60%] flex-col items-center justify-center rounded-full text-sm font-medium text-white md:mx-11 md:h-64 md:w-64 md:-translate-y-[80%] md:text-lg ltr:lg:-translate-x-20 rtl:lg:translate-x-20">
+            <div className="absolute mx-4 flex h-36 w-36 -translate-y-[60%] flex-col items-center justify-center rounded-full bg-custom-dark text-sm font-medium text-white md:mx-11 md:h-64 md:w-64 md:-translate-y-[80%] md:text-lg ltr:lg:-translate-x-20 rtl:lg:translate-x-20">
               <span className="text-xl font-bold md:text-4xl">
                 {t("years")}
               </span>
@@ -31,27 +31,27 @@ async function About() {
         </div>
         <div data-aos="fade-right" className="lg:w-1/2">
           <div className="mb-14">
-            <h3 className="text-custom-text-dark mb-4 text-xl font-semibold dark:text-white">
+            <h3 className="mb-4 text-xl font-semibold text-custom-text-dark dark:text-white">
               {t("myInfoTitle")}
             </h3>
-            <p className="text-custom-text-light dark:text-custom-text-light-dark text-lg leading-8">
+            <p className="text-lg leading-8 text-custom-text-light dark:text-custom-text-light-dark">
               {t("bio")}
             </p>
           </div>
           <div className="mb-14">
-            <h3 className="text-custom-text-dark mb-4 text-xl font-semibold dark:text-white">
+            <h3 className="mb-4 text-xl font-semibold text-custom-text-dark dark:text-white">
               {t("whatIsMySkillLevelTitle")}
             </h3>
-            <p className="text-custom-text-light dark:text-custom-text-light-dark text-lg leading-8">
+            <p className="text-lg leading-8 text-custom-text-light dark:text-custom-text-light-dark">
               {t("whatIsMySkillLevel")}
             </p>
-            <div className="pt-10 sm:-mx-5 sm:flex sm:flex-wrap">
-              <SkillBar amount={80} title="JavaScript" />
-              <SkillBar amount={90} title="ReactJs" />
-              <SkillBar amount={85} title="NextJs" />
-              <SkillBar amount={90} title="HTML" />
-              <SkillBar amount={90} title="CSS" />
-              <SkillBar amount={80} title="GIT" />
+            <div className="grid grid-cols-2 gap-4 py-10 text-xl text-custom-text-dark dark:text-white">
+              <span>JavaScript</span>
+              <span>ReactJs</span>
+              <span>NextJs</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>GIT</span>
             </div>
             <div>
               <SeeMore />

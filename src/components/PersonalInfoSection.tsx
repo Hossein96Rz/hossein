@@ -9,7 +9,7 @@ function PersonalInfoSection() {
   const personalInfo = [
     { id: 1, key: [t("firstName")], value: [t("name")] },
     { id: 2, key: [t("lastName")], value: [t("rezaei")] },
-    { id: 3, key: [t("age")], value: "28 " + [t("year")] },
+    { id: 3, key: [t("age")], value: "29 " + [t("year")] },
     { id: 4, key: [t("nationality")], value: [t("persian")] },
     { id: 5, key: [t("email")], value: "hossein96rz@gmail.com" },
     {
@@ -27,10 +27,10 @@ function PersonalInfoSection() {
               className="flex-shrink-0 flex-grow-0 basis-full pb-5 sm:basis-1/2"
               key={item.id}
             >
-              <span className="text-custom-text-light pb-5 text-base font-normal dark:text-[#a9afc3;]">
+              <span className="pb-5 text-base font-normal text-custom-text-light dark:text-[#a9afc3;]">
                 {item.key + ": "}
               </span>
-              <span className="text-custom-dark font-medium dark:text-white">
+              <span className="font-medium text-custom-dark dark:text-white">
                 {item.value}
               </span>
             </li>
