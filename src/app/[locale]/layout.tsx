@@ -15,17 +15,13 @@ import { Analytics } from "@vercel/analytics/react";
 import {
   getMessages,
   getTranslations,
-  unstable_setRequestLocale,
+  setRequestLocale,
 } from "next-intl/server";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ToastifyContainer from "@/src/components/ToastifyContainer";
 import { Viewport } from "next";
-
-interface generateMetadataProps {
-  params: {
-    locale: Language;
-  };
-}
+import { cookies } from "next/headers";
+import getLocale from "@/src/utils/getLocale";
 
 interface layoutProps {
   children: ReactNode;
@@ -56,8 +52,8 @@ export const viewport: Viewport = {
   ],
 };
 
-export async function generateMetadata({ params }: generateMetadataProps) {
-  const { locale } = params;
+export async function generateMetadata() {
+  const locale = await getLocale();
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
     title: t("title"),
@@ -65,10 +61,10 @@ export async function generateMetadata({ params }: generateMetadataProps) {
   };
 }
 
-async function layout({ children, params }: layoutProps) {
-  const { locale } = params;
+async function layout({ children }: layoutProps) {
+  const locale = await getLocale();
   const messages = await getMessages({ locale });
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   return (
     <html
       lang={locale}

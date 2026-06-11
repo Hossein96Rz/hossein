@@ -4,15 +4,12 @@ import Footer from "@/src/components/Footer";
 import Hero from "@/src/components/Hero";
 import Services from "@/src/components/Services";
 import { Language } from "@/src/types/language";
-import { unstable_setRequestLocale } from "next-intl/server";
-interface PageProps {
-  params: {
-    locale: Language;
-  };
-}
-function page({ params }: PageProps) {
-  const { locale } = params;
-  unstable_setRequestLocale(locale);
+import getLocale from "@/src/utils/getLocale";
+import { setRequestLocale } from "next-intl/server";
+async function page() {
+  const locale = await getLocale();
+
+  setRequestLocale(locale);
 
   return (
     <main

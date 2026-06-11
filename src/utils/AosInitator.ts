@@ -1,16 +1,16 @@
 "use client";
 
 import AOS from "aos";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
-function AosInitator(): ReactNode {
+export default function AosInitializer() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
   }, []);
-  return;
-}
 
-export default AosInitator;
+  return null;
+}

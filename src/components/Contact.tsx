@@ -3,13 +3,9 @@ import Section from "./Section";
 import emailIcon from "public/icons/email.webp";
 import linkedInIcon from "public/icons/linkedin.svg";
 import telegramIcon from "public/icons/telegram.svg";
-import ContactForm from "./ContactForm";
-import dynamic from "next/dynamic";
 import ContactCard from "./ContactCard";
+import ContantClient from "./ContantClient";
 
-const LazyMap = dynamic(() => import("./Map"), {
-  ssr: false,
-});
 
 async function Contact() {
   const t = await getTranslations("Contact");
@@ -34,10 +30,7 @@ async function Contact() {
           </a>
         </ContactCard>
       </div>
-      <div className="flex flex-col lg:flex-row">
-        <ContactForm />
-        <LazyMap />
-      </div>
+    <ContantClient />
     </Section>
   );
 }
