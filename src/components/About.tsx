@@ -46,12 +46,25 @@ async function About() {
               {t("whatIsMySkillLevel")}
             </p>
             <div className="grid grid-cols-2 gap-4 py-10 text-xl text-custom-text-dark dark:text-white">
-              <span>JavaScript</span>
-              <span>ReactJs</span>
-              <span>NextJs</span>
+              <span>JavaScript / TypeScript</span>
+              <span>React</span>
+              <span>Next.js</span>
               <span>HTML</span>
-              <span>CSS</span>
-              <span>GIT</span>
+              <span>CSS / Sass / Tailwind</span>
+              <span>Git / GitHub / GitLab</span>
+              <span>Zustand / Redux / RTK</span>
+              <span>TanStack Query / Router</span>
+              <span>PWA / IndexedDB</span>
+              <span>WebSocket / REST API</span>
+              <span>Jest / Vitest / Storybook</span>
+              <span>Material UI / Shadcn / AntD</span>
+              <span>React Hook Form / Recharts</span>
+              <span>Vite / Webpack / NX</span>
+              <span>Docker</span>
+              <span>SSR / SSG / ISR</span>
+              <span>SEO / Web Core Vitals</span>
+              <span>i18n / Responsive Design</span>
+              <span>AI-Assisted Development</span>
             </div>
             <div>
               <SeeMore />
