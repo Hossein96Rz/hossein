@@ -19,7 +19,7 @@ function PersonalInfoSection() {
     },
   ];
   return (
-    <div className="lg:flex-shrink-0 sticky top-0 lg:flex-grow-0 lg:basis-1/2">
+    <div className="lg:flex-shrink-0 lg:sticky lg:top-0 lg:flex-grow-0 lg:basis-1/2">
       <InformationRow title={t("personalInfo")}>
         <ul className="sm:flex sm:flex-wrap">
           {personalInfo.map((item) => (
