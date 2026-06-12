@@ -3,7 +3,6 @@ import Sidebar from "@/src/views/Sidebar";
 import { Poppins, Vazirmatn } from "next/font/google";
 import classNames from "classnames";
 import "./globals.css";
-import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
 import AosInitator from "@/src/utils/AosInitator";
