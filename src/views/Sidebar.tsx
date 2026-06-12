@@ -102,7 +102,7 @@ function Sidebar() {
           />
         ))}
       </ul>
-      <div className="dark:border-custom-dark mt-auto flex gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 xl:p-10">
+      <div className="mt-auto flex gap-[13px] border-t-[1px] border-gray-400 p-4 sm:p-5 xl:p-10 dark:border-custom-dark">
         <div className="h-[50px] w-[50px]">
           <Image
             quality={20}
@@ -110,15 +110,15 @@ function Sidebar() {
             width={50}
             height={50}
             src={avatar}
-            className="dark:border-custom-dark rounded-full border border-gray-400"
+            className="rounded-full border border-gray-400 dark:border-custom-dark"
           />
         </div>
         <div>
-          <span className="text-custom-text-dark font-medium dark:text-white">
+          <span className="font-medium text-custom-text-dark dark:text-white">
             {t("name")}
           </span>
-          <address className="text-custom-text-light text-xs not-italic">
-            <a href="mailto:webmaster@example.com">hossein96rz@gmail.com</a>
+          <address className="text-xs not-italic text-custom-text-light">
+            <a href="mailto:hossein96rz@gmail.com">hossein96rz@gmail.com</a>
           </address>
         </div>
       </div>
