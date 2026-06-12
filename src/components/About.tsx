@@ -67,21 +67,8 @@ function About() {
               <span>React</span>
               <span>Next.js</span>
               <span>HTML</span>
-              <span>CSS / Sass / Tailwind</span>
-              <span>Git / GitHub / GitLab</span>
-              <span>Zustand / Redux / RTK</span>
-              <span>TanStack Query / Router</span>
-              <span>PWA / IndexedDB</span>
-              <span>WebSocket / REST API</span>
-              <span>Jest / Vitest / Storybook</span>
-              <span>Material UI / Shadcn / AntD</span>
-              <span>React Hook Form / Recharts</span>
-              <span>Vite / Webpack / NX</span>
-              <span>Docker</span>
-              <span>SSR / SSG / ISR</span>
-              <span>SEO / Web Core Vitals</span>
-              <span>i18n / Responsive Design</span>
-              <span>AI-Assisted Development</span>
+              <span>CSS</span>
+              <span>Git</span>
             </div>
           </div>
           <div>
