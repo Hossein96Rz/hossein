@@ -5,7 +5,7 @@ import classNames from "classnames";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import LayoutContextProvider from "@/src/contexts/layoutContext";
-import AosInitator from "@/src/utils/AosInitator";
+import { AosInitializer } from "@/src/utils/AosInitator";
 import TWThemeProvider from "@/src/components/TWThemeProvider";
 import { ReactNode } from "react";
 import { Language } from "@/src/types/language";
@@ -79,7 +79,7 @@ async function layout({ children }: layoutProps) {
         <Analytics />
         <NextIntlClientProvider messages={messages}>
           <TWThemeProvider>
-            <AosInitator />
+            <AosInitializer />
             <LayoutContextProvider>
               <ToastifyContainer />
               <Header />
