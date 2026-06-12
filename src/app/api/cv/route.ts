@@ -22,7 +22,7 @@ export async function GET() {
   }
   const fileBuffer = fs.readFileSync(filePath);
 
-  return new Response(fileBuffer, {
+  return new Response(new Uint8Array(fileBuffer), {
     status: 200,
     headers: {
       "Content-Type": "application/pdf",

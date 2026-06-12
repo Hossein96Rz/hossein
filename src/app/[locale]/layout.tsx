@@ -19,14 +19,10 @@ import {
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ToastifyContainer from "@/src/components/ToastifyContainer";
 import { Viewport } from "next";
-import { cookies } from "next/headers";
 import getLocale from "@/src/utils/getLocale";
 
 interface layoutProps {
   children: ReactNode;
-  params: {
-    locale: Language;
-  };
 }
 
 const poppins = Poppins({
