@@ -9,7 +9,7 @@ function PersonalInfoSection() {
   const personalInfo = [
     { id: 1, key: [t("firstName")], value: [t("name")] },
     { id: 2, key: [t("lastName")], value: [t("rezaei")] },
-    { id: 3, key: [t("age")], value: "29 " + [t("year")] },
+    { id: 3, key: [t("age")], value: "30 " + [t("year")] },
     { id: 4, key: [t("nationality")], value: [t("persian")] },
     { id: 5, key: [t("email")], value: "hossein96rz@gmail.com" },
     {
@@ -19,7 +19,7 @@ function PersonalInfoSection() {
     },
   ];
   return (
-    <div className="lg:flex-shrink-0 lg:flex-grow-0 lg:basis-1/2">
+    <div className="lg:flex-shrink-0 sticky top-0 lg:flex-grow-0 lg:basis-1/2">
       <InformationRow title={t("personalInfo")}>
         <ul className="sm:flex sm:flex-wrap">
           {personalInfo.map((item) => (
