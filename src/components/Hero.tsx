@@ -9,24 +9,11 @@ import classNames from "classnames";
 import ReactTypedWraped from "./ReactTypedWraped";
 import DownloadCvButton from "./DownloadCvButton";
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react";
+import { useAos } from "@/src/utils/useAos";
 
 function Hero() {
   const t = useTranslations("Hero");
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
-  const aos = (animation: string, delay?: number, offset?: number) =>
-    ready
-      ? {
-          "data-aos": animation,
-          ...(delay != null ? { "data-aos-delay": String(delay) } : {}),
-          ...(offset != null ? { "data-aos-offset": String(offset) } : {}),
-        }
-      : {};
+  const aos = useAos();
 
   return (
     <section

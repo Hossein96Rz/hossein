@@ -4,21 +4,15 @@ import { toast } from "react-toastify";
 import Button from "./Button";
 import { useTranslations } from "next-intl";
 import { validateFormData } from "../utils/utils";
-import { FormEventHandler, useRef, useState, useEffect } from "react";
+import { FormEventHandler, useRef, useState } from "react";
+import { useAos } from "@/src/utils/useAos";
 
 function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("Contact");
   const [isLoading, setIsLoading] = useState(false);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
-  const aosAttrs = ready
-    ? { "data-aos": "fade-right", "data-aos-delay": "200" }
-    : {};
+  const aos = useAos();
+  const aosAttrs = aos("fade-right", 200);
 
   async function submitMessage(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

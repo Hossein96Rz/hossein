@@ -1,10 +1,10 @@
 "use client";
 
-import { getTranslations } from "next-intl/server";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { useAos } from "@/src/utils/useAos";
 
 interface ContactCardProps {
   icon: StaticImport;
@@ -14,13 +14,8 @@ interface ContactCardProps {
 
 function ContactCard({ icon, title, children }: ContactCardProps) {
   const t = useTranslations("Contact");
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
-  const aosAttrs = ready ? { "data-aos": "fade-right" } : {};
+  const aos = useAos();
+  const aosAttrs = aos("fade-right");
 
   return (
     <div

@@ -6,23 +6,11 @@ import SkillBar from "./SkillBar";
 import SeeMore from "./SeeMore";
 import { useTranslations } from "next-intl";
 import Section from "./Section";
-import { useState, useEffect } from "react";
+import { useAos } from "@/src/utils/useAos";
 
 function About() {
   const t = useTranslations("About");
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
-  const aos = (animation: string, delay?: number) =>
-    ready
-      ? {
-          "data-aos": animation,
-          ...(delay != null ? { "data-aos-delay": String(delay) } : {}),
-        }
-      : {};
+  const aos = useAos();
 
   return (
     <Section id="about" title={t("aboutMe")}>

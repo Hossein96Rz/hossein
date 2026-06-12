@@ -6,8 +6,9 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import classNames from "classnames";
+import { useAos } from "@/src/utils/useAos";
 
 // Map coordinates
 const armanITlocation: LatLngTuple = [
@@ -31,15 +32,8 @@ L.Icon.Default.mergeOptions({
 function Map() {
   const t = useTranslations("Map");
   const [isHovered, setIsHovered] = useState(false);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
-  const aosAttrs = ready
-    ? { "data-aos": "fade-right", "data-aos-delay": "400" }
-    : {};
+  const aos = useAos();
+  const aosAttrs = aos("fade-right", 400);
 
   return (
     <div
