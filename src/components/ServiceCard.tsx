@@ -16,6 +16,11 @@ function ServiceCard({ children, fadeInDelay, title, icon }: ServiceCardProps) {
   const elRef = useRef<HTMLDivElement>(null);
   const animationFrame = useRef<number | null>(null);
   const [modal, setModal] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
 
   function toggleHandler(e: React.MouseEvent) {
     setModal((prev) => !prev);
@@ -74,15 +79,23 @@ function ServiceCard({ children, fadeInDelay, title, icon }: ServiceCardProps) {
     };
   }, []);
 
+  const aosAttrs = ready
+    ? {
+        "data-aos": "fade-right",
+        ...(fadeInDelay != null
+          ? { "data-aos-delay": String(fadeInDelay) }
+          : {}),
+        "data-aos-duration": "1200",
+      }
+    : {};
+
   return (
     <>
       <Modal modal={modal} toggle={toggleHandler}>
         {children}
       </Modal>
       <li
-        data-aos="fade-right"
-        data-aos-delay={fadeInDelay}
-        data-aos-duration="1200"
+        {...aosAttrs}
         className="mb-8 w-full cursor-pointer hover:z-[1] md:w-1/2 md:pl-8 lg:min-h-[310px] lg:w-1/4"
         onClick={toggleHandler}
       >

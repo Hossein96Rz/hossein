@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import hero from "public/content/hero.jpeg";
 import githubIcon from "public/icons/github-mark.svg";
@@ -6,10 +8,26 @@ import instagramIcon from "public/icons/instagram.svg";
 import classNames from "classnames";
 import ReactTypedWraped from "./ReactTypedWraped";
 import DownloadCvButton from "./DownloadCvButton";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { useState, useEffect } from "react";
 
-async function Hero() {
-  const t = await getTranslations("Hero");
+function Hero() {
+  const t = useTranslations("Hero");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  const aos = (animation: string, delay?: number, offset?: number) =>
+    ready
+      ? {
+          "data-aos": animation,
+          ...(delay != null ? { "data-aos-delay": String(delay) } : {}),
+          ...(offset != null ? { "data-aos-offset": String(offset) } : {}),
+        }
+      : {};
+
   return (
     <section
       id="home"
@@ -17,8 +35,7 @@ async function Hero() {
     >
       <div className="px-5 py-24 text-center">
         <div
-          data-aos="fade-up"
-          data-aos-delay="100"
+          {...aos("fade-up", 100)}
           className="mx-auto flex h-52 w-52 items-center justify-center md:h-64 md:w-64"
         >
           <Image
@@ -29,28 +46,25 @@ async function Hero() {
           />
         </div>
         <h2
-          data-aos="fade-up"
-          data-aos-delay="200"
+          {...aos("fade-up", 200)}
           className="mt-4 text-xl font-medium text-[#666666] dark:text-white"
         >
           {t("heroMainText")}
         </h2>
         <div
-          data-aos="fade-up"
-          data-aos-delay="300"
+          {...aos("fade-up", 300)}
           className="text-custom-text-dark mt-5 text-3xl font-bold sm:text-5xl dark:text-white"
         >
           <ReactTypedWraped text={t("frontendDeveloper")} />
         </div>
-        <div data-aos="fade-up" data-aos-delay="400" className="mt-5">
+        <div {...aos("fade-up", 400)} className="mt-5">
           <h3 className="text-custom-text-light dark:text-custom-text-light-dark mx-auto max-w-lg text-center text-base font-light sm:text-lg">
             {t("description")}
           </h3>
         </div>
 
         <ul
-          data-aos="fade-up"
-          data-aos-delay="500"
+          {...aos("fade-up", 500)}
           className="mx-auto flex items-center justify-center"
         >
           {contactList.map((item, index) => {
@@ -83,7 +97,7 @@ async function Hero() {
             );
           })}
         </ul>
-        <div data-aos="fade-up" data-aos-offset="-30" data-aos-delay="600">
+        <div {...aos("fade-up", 600, -30)}>
           <DownloadCvButton />
         </div>
       </div>

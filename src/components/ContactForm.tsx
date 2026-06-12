@@ -1,14 +1,24 @@
 "use client";
+
 import { toast } from "react-toastify";
 import Button from "./Button";
 import { useTranslations } from "next-intl";
 import { validateFormData } from "../utils/utils";
-import { FormEventHandler, useRef, useState } from "react";
+import { FormEventHandler, useRef, useState, useEffect } from "react";
 
 function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const t = useTranslations("Contact");
   const [isLoading, setIsLoading] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  const aosAttrs = ready
+    ? { "data-aos": "fade-right", "data-aos-delay": "200" }
+    : {};
 
   async function submitMessage(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -52,8 +62,7 @@ function ContactForm() {
   return (
     <div
       className="mb-12 rounded-md bg-[#F5F8FC] px-5 py-12 md:px-11 lg:h-[563px] lg:basis-1/2 ltr:lg:mr-7 rtl:lg:ml-7 dark:bg-[#191C26]"
-      data-aos="fade-right"
-      data-aos-delay={200}
+      {...aosAttrs}
     >
       <p className="mb-5 max-w-[360px] text-[20px] font-semibold text-custom-text-dark transition-all duration-300 group-hover:text-white dark:text-white">
         {t("contactMessage")}

@@ -6,7 +6,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classNames from "classnames";
 
 // Map coordinates
@@ -29,14 +29,22 @@ L.Icon.Default.mergeOptions({
 });
 
 function Map() {
-  const [isHovered, setIsHovered] = useState(false);
   const t = useTranslations("Map");
+  const [isHovered, setIsHovered] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  const aosAttrs = ready
+    ? { "data-aos": "fade-right", "data-aos-delay": "400" }
+    : {};
 
   return (
     <div
       className="h-[350px] w-full lg:basis-1/2"
-      data-aos="fade-right"
-      data-aos-delay={400}
+      {...aosAttrs}
     >
       <div
         className={classNames("transition-all duration-500", {
@@ -48,7 +56,7 @@ function Map() {
         onTouchEnd={() => setIsHovered(false)}
       >
         <MapContainer
-        key="map" 
+        key="map"
           className="z-0 h-[350px] w-full rounded-md border-[5px] border-[#F5F8FC] lg:h-[563px] dark:border-[#191C26]"
           center={armanITlocation}
           zoom={14}
