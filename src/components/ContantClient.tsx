@@ -11,7 +11,7 @@ export default function ContactClient() {
   return (
     <div className="flex flex-col lg:flex-row">
       <ContactForm />
-      {/* <Map /> */}
+      <Map />
     </div>
   );
 }
