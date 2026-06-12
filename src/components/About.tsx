@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import aboutImage from "public/content/about.jpeg";
+import aboutImage from "public/content/about.jpg";
 import SkillBar from "./SkillBar";
 import SeeMore from "./SeeMore";
 import { useTranslations } from "next-intl";
